@@ -359,6 +359,12 @@ const Pricing = () => {
                 width={30}
                 height={30}
               />
+              <Image
+                src={"/icons/linkedin.png"}
+                alt=""
+                width={30}
+                height={30}
+              />
             </div>
           </div>
         </div>
