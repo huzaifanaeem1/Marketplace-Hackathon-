@@ -334,7 +334,7 @@ const Pricing = () => {
             </div>
           </div>
           <h2 className="text-myGry font-semibold mt-8 text-center">
-            Haven't got your answer? Contact our support
+            Haven&apos;t got your answer? Contact our support
           </h2>
         </div>
         <div className="mt-20">
