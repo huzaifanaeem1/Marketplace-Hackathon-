@@ -18,12 +18,14 @@ const Header = () => {
         </h1>
         <div className="hidden md:flex gap-6 items-center w-fit text-black">
           <Link
+            onClick={() => setIsOpen(false)}
             href="/"
             className="text-base font-semibold hover:underline text-myGry"
           >
             Home
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             href="/shop"
             className="text-base flex gap-1 font-semibold hover:underline text-myGry"
           >
@@ -37,24 +39,28 @@ const Header = () => {
           </Link>
           <Link
             href="/about"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             About
           </Link>
           <Link
             href="/blog"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Blog
           </Link>
           <Link
             href="/contact"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Contact
           </Link>
           <Link
             href="/pages"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Pages
@@ -71,12 +77,14 @@ const Header = () => {
         <div className="flex flex-col items-center gap-6 justify-center h-full">
           <Link
             href="/"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Home
           </Link>
           <Link
             href="/shop"
+            onClick={() => setIsOpen(false)}
             className="text-base flex gap-1 font-semibold hover:underline text-myGry"
           >
             Shop
@@ -89,24 +97,28 @@ const Header = () => {
           </Link>
           <Link
             href="/about"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             About
           </Link>
           <Link
             href="/blog"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Blog
           </Link>
           <Link
             href="/contact"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Contact
           </Link>
           <Link
             href="/pages"
+            onClick={() => setIsOpen(false)}
             className="text-base font-semibold hover:underline text-myGry"
           >
             Pages

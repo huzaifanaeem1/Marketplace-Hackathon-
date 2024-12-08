@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "../ProductCard";
 
-const AllProducts = () => {
+const BestSeller = () => {
   const products = [
     {
       id: 1,
@@ -10,7 +10,7 @@ const AllProducts = () => {
       price: "$16.48",
       salePrice: "$6.48",
       colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product1.png",
+      imgUrl: "/product-page/pro-1.png",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const AllProducts = () => {
       price: "$16.48",
       salePrice: "$6.48",
       colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product2.png",
+      imgUrl: "/product-page/pro-2.png",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const AllProducts = () => {
       price: "$16.48",
       salePrice: "$6.48",
       colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product3.png",
+      imgUrl: "/product-page/pro-3.png",
     },
     {
       id: 4,
@@ -75,58 +75,26 @@ const AllProducts = () => {
       colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
       imgUrl: "/products/product8.png",
     },
-    {
-      id: 9,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product9.png",
-    },
-    {
-      id: 10,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product10.png",
-    },
-    {
-      id: 11,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product11.png",
-    },
-    {
-      id: 12,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product12.png",
-    },
   ];
   return (
-    <div className="flex justify-center items-center gap-4 flex-wrap py-12 bg-white">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          name={product.name}
-          category={product.category}
-          imgUrl={product.imgUrl}
-          price={product.price}
-          salePrice={product.salePrice}
-          colors={product.colors}
-        />
-      ))}
+    <div className="py-12">
+      <div className="text-xl font-bold text-myHeading">
+        <h1>BESTSELLER PRODUCTS</h1>
+      </div>
+      <div className="flex justify-center items-center flex-wrap ">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            category={product.category}
+            imgUrl={product.imgUrl}
+            price={product.price}
+            salePrice={product.salePrice}
+          />
+        ))}
+      </div>
     </div>
   );
 };
 
-export default AllProducts;
+export default BestSeller;

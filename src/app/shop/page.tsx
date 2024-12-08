@@ -39,10 +39,10 @@ const page = () => {
     },
   ];
   return (
-    <div className="pt-40 bg-white text-black">
+    <div className="pt-40 bg-[#fafafa] text-black">
       <div>
         {/* shop header */}
-        <div className=" w-full flex flex-col sm:flex-row gap-6 sm:gap-0 justify-start sm:justify-between items-center mb-20 px-12">
+        <div className=" w-full flex flex-col sm:flex-row gap-6 sm:gap-0 justify-start sm:justify-between items-center mb-20 px-12 bg-[#fafafa]">
           <h1 className="text-3xl font-bold">Shop</h1>
           <div className="flex justify-center items-center gap-4 font-semibold">
             <h3>Home</h3>
@@ -56,7 +56,7 @@ const page = () => {
           </div>
         </div>
         {/* shop categories */}
-        <div className="flex justify-center items-center flex-wrap gap-4">
+        <div className="flex justify-center items-center flex-wrap gap-4 bg-[#fafafa]">
           {categories.map((category) => (
             <CategoryCard
               key={category.id}
@@ -67,7 +67,7 @@ const page = () => {
           ))}
         </div>
         {/* filtered area */}
-        <div className="flex items-center md:px-28 mt-28 gap-8 md:gap-0 justify-between font-semibold text-myGry flex-col md:flex-row  ">
+        <div className="flex items-center md:px-28 py-6 mt-16 gap-8 md:gap-0 justify-between font-semibold text-myGry flex-col md:flex-row bg-white ">
           <div className="">Showing all 12 results</div>
           <div className="flex justify-center items-center gap-7">
             Views:

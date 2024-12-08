@@ -15,7 +15,7 @@ const ProductCard = ({
   imgUrl: string;
   price: string;
   salePrice: string;
-  colors: string[];
+  colors?: string[];
 }) => {
   return (
     <Link href={``} className="text-black hover:scale-105 duration-200">
@@ -36,11 +36,14 @@ const ProductCard = ({
             <span className="text-[#bdbdbd]">{price}</span>
             <span className="text-[#23856D]">{salePrice}</span>
           </div>
-          <div className="flex gap-[5px]">
-            {colors.map((color, index) => (
-              <div key={index} className={`${color} w-4 h-4 rounded-[50%]`} />
-            ))}
-          </div>
+
+          {colors && (
+            <div className="flex gap-[5px]">
+              {colors.map((color, index) => (
+                <div key={index} className={`${color} w-4 h-4 rounded-[50%]`} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </Link>
