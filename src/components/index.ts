@@ -20,6 +20,9 @@ import AboutHeroSection from "./aboutpage/HeroSection";
 import Stats from "./aboutpage/Stats";
 import Video from "./aboutpage/Video";
 import OurTeam from "./aboutpage/OurTeam";
+import ContactHeroSection from "./contactpage/HeroSection";
+import OurOffice from "./contactpage/OurOffice";
+import LetsTalk from "./contactpage/LetsTalk";
 
 export {
   Footer,
@@ -44,4 +47,7 @@ export {
   AboutHeroSection,
   Video,
   OurTeam,
+  ContactHeroSection,
+  OurOffice,
+  LetsTalk,
 };
