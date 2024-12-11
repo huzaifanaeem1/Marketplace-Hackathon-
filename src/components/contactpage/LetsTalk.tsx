@@ -13,9 +13,9 @@ const LetsTalk = () => {
           className="-ml-5"
         />
         <h3 className="text-2xl font-semibold text-[#737373]">
-          WE Can't WAIT TO MEET YOU
+          WE Can&apos;t WAIT TO MEET YOU
         </h3>
-        <h1 className="text-5xl font-bold">Let's Talk</h1>
+        <h1 className="text-5xl font-bold">Let&apos;s Talk</h1>
         <button className="bg-myBlue px-8 py-4 font-bold rounded-xl text-white">
           Try it free now
         </button>
