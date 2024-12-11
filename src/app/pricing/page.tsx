@@ -1,4 +1,4 @@
-import Pricing from "@/components/pricing/Pricing";
+import { Pricing } from "@/components/";
 
 const page = () => {
   return <Pricing />;

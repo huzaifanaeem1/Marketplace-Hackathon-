@@ -3,7 +3,7 @@ import PaymentCard from "./PaymentCard";
 
 const Payment = () => {
   return (
-    <section className="flex justify-center items-center gap-20 flex-wrap py-16 px-12 ">
+    <section className="flex justify-center items-center gap-20 flex-wrap py-8 px-12 ">
       <PaymentCard imgUrl="/companyLogos/logo2.png" />
       <PaymentCard imgUrl="/companyLogos/logo3.png" />
       <PaymentCard imgUrl="/companyLogos/logo4.png" />

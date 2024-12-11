@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Payment from "../product-list-page/Payment";
+import PricingCard from "./PricingCard";
 
 const Pricing = () => {
   return (
@@ -32,7 +33,7 @@ const Pricing = () => {
               Problems trying to resolve the conflict between <br /> the two
               major realms of Classical physics: Newtonian mechanics
             </p>
-            <div className="flex justify-center items-center flex-col sm:flex-row gap-4 font-bold text-myHeading">
+            <div className="flex justify-center items-center flex-col sm:flex-row mt-6 gap-4 font-bold text-myHeading">
               <span>Monthly</span>
               <div className="border-2 border-myBlue rounded-3xl w-16 h-8 "></div>
               <span>Yearly</span>
@@ -42,210 +43,24 @@ const Pricing = () => {
             </div>
           </div>
           {/* plans */}
-          <div className="flex justify-center items-center gap-[1px] mt-24 flex-wrap px-6 ">
+          <div className="flex justify-center items-center gap-8 sm:gap-0 mt-28 flex-wrap px-6 ">
             {/* plan 1 */}
-            <div className="flex flex-col justify-center items-center gap-4 border-2 border-myBlue rounded-lg px-7 py-8">
-              <h1 className="text-xl font-bold text-myHeading">FREE</h1>
-              <p className="text-lg text-myGry font-semibold">
-                Organize across all apps by hand
-              </p>
-              <div className="text-myBlue flex justify-center items-center font-bold text-lg gap-2">
-                <h3 className="text-4xl">0</h3>
-                <div>
-                  <h4>$</h4>
-                  <h4>Per month</h4>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center gap-5">
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-              </div>
-            </div>
+            <PricingCard plan="FREE" />
             {/* plan 2 */}
-            <div className="flex flex-col justify-center items-center -mt-16 bg-gray-800 gap-4 border-2 border-myBlue rounded-lg px-7 py-8">
-              <h1 className="text-xl font-bold text-white">FREE</h1>
-              <p className="text-lg text-white font-semibold">
-                Organize across all apps by hand
-              </p>
-              <div className="text-myBlue flex justify-center items-center font-bold text-lg gap-2">
-                <h3 className="text-4xl">9.99</h3>
-                <div>
-                  <h4>$</h4>
-                  <h4>Per month</h4>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center gap-5 text-white">
-                <div className="flex gap-2 text-white">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base  font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-              </div>
-            </div>
+            <PricingCard plan="STANDARD" light={false} className="-mt-16" />
             {/* plan 3 */}
-            <div className="flex flex-col justify-center items-center gap-4 border-2 border-myBlue rounded-lg px-7 py-8">
-              <h1 className="text-xl font-bold text-myHeading">FREE</h1>
-              <p className="text-lg text-myGry font-semibold">
-                Organize across all apps by hand
-              </p>
-              <div className="text-myBlue flex justify-center items-center font-bold text-lg gap-2">
-                <h3 className="text-4xl">0</h3>
-                <div>
-                  <h4>$</h4>
-                  <h4>Per month</h4>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center gap-5">
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Image
-                    src={"/icons/tick.png"}
-                    className="p-3 rounded-[50%] bg-[#2DC071]"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
-                  <p className="text-base text-myGry font-semibold">
-                    Unlimited Product updates
-                  </p>
-                </div>
-              </div>
-            </div>
+            <PricingCard plan="PREMIUM" />
           </div>
 
           {/* trusted */}
-          <div className="flex justify-center items-center mt-20 flex-col">
+          <div className="flex justify-center items-center mt-20 flex-col px-20">
             <h1 className="text-myGry font-semibold text-lg text-center">
               Trusted by Over 4000 Big companies
             </h1>
             <Payment />
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col">
+        <div className="flex justify-center items-center flex-col px-6">
           <div className="flex justify-center items-center flex-col mt-20">
             <h1 className="text-4xl font-bold">Pricing FAQs</h1>
             <p className="text-base font-semibold text-myGry text-center">
@@ -253,8 +68,9 @@ const Pricing = () => {
               realms of Classical physics
             </p>
           </div>
-          <div className="flex items-center justify-center flex-wrap px-6 py-12">
-            <div>
+          {/* FAQs */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-center gap-12 px-6 sm:px-24 py-16">
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -267,7 +83,7 @@ const Pricing = () => {
                 Excitation venial consequent sent nostrum met.
               </h5>
             </div>
-            <div>
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -280,7 +96,7 @@ const Pricing = () => {
                 Excitation venial consequent sent nostrum met.
               </h5>
             </div>
-            <div>
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -293,7 +109,7 @@ const Pricing = () => {
                 Excitation venial consequent sent nostrum met.
               </h5>
             </div>
-            <div>
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -306,7 +122,7 @@ const Pricing = () => {
                 Excitation venial consequent sent nostrum met.
               </h5>
             </div>
-            <div>
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -319,7 +135,7 @@ const Pricing = () => {
                 Excitation venial consequent sent nostrum met.
               </h5>
             </div>
-            <div>
+            <div className="space-y-6 sm:space-y-0">
               <div>
                 <Image src={"/icons/left.png"} alt="" width={8} height={16} />
                 <h2 className="font-bold text-myHeading text-2xl">
@@ -337,7 +153,8 @@ const Pricing = () => {
             Haven&apos;t got your answer? Contact our support
           </h2>
         </div>
-        <div className="mt-20">
+        {/* Free trial */}
+        <div className="my-20">
           <div className="flex justify-center items-center flex-col gap-4">
             <h1 className="text-myHeading font-bold text-3xl text-center">
               Start your 14 days free trial
@@ -350,7 +167,7 @@ const Pricing = () => {
             <button className="bg-myBlue px-8 py-4 font-bold rounded-xl text-white">
               Try it free now
             </button>
-            <div className="flex justify-center items-center gap-3 mt-5">
+            <div className="flex justify-center items-center gap-5 mt-5">
               <Image src={"/icons/x-blu.png"} alt="" width={30} height={30} />
               <Image src={"/icons/fb-blue.png"} alt="" width={30} height={30} />
               <Image

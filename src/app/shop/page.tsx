@@ -1,9 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import CategoryCard from "@/components/product-list-page/categoryCard";
-import AllProducts from "@/components/product-list-page/AllProducts";
-import Payment from "@/components/product-list-page/Payment";
-import Pagination from "@/components/product-list-page/Pagination";
+import { CategoryCard, AllProducts, Payment, Pagination } from "@/components/";
 
 const page = () => {
   const categories = [

@@ -1,15 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import BestSeller from "@/components/product-page/BestSeller";
-import Payment from "@/components/product-list-page/Payment";
+import { ProductBestSeller, Payment } from "@/components/";
 
 const page = async ({ params }: { params: { product_name: string } }) => {
   const { product_name } = params;
   return (
     <section className="body-font overflow-hidden pt-32 bg-[#fafafa] rounded-lg">
-      <div className="container mx-auto px-12 py-8 sm:px-0">
+      <div className="container mx-auto px-8 py-8 sm:px-0">
         {/* shop header */}
-        <div className="flex justify-center sm:justify-start py-12 items-center gap-4 font-semibold">
+        <div className="flex justify-center sm:justify-start sm:ml-32 py-12 items-center gap-4 font-semibold">
           <h3 className="text-myHeading">Home</h3>
           <Image
             src={"/icons/left-icon.png"}
@@ -205,7 +204,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
             </div>
           </div>
         </div>
-        <BestSeller />
+        <ProductBestSeller />
         <Payment />
       </div>
     </section>
