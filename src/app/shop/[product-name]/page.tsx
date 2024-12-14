@@ -106,7 +106,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
               <button className="flex text-white bg-myBlue font-semibold py-2 px-6 focus:outline-none hover:scale-105 duration-200 rounded">
                 Select Options
               </button>
-              <div className="bg-white rounded-[50%] w-8 h-8 flex justify-center items-center">
+              <div className="bg-white rounded-[50%] w-12 h-12 p-1 border-2 border-myGry/40 flex justify-center items-center">
                 <Image
                   src={"/icons/wishlist-bk.png"}
                   width={20}
@@ -114,7 +114,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
                   alt={""}
                 />
               </div>
-              <div className="bg-white rounded-[50%] w-8 h-8 flex justify-center items-center">
+              <div className="bg-white rounded-[50%]  w-12 h-12 p-1 border-2 border-myGry/40 flex justify-center items-center">
                 <Image
                   src={"/icons/cart-bk.png"}
                   width={20}
@@ -122,7 +122,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
                   alt={""}
                 />
               </div>
-              <div className="bg-white rounded-[50%] w-8 h-8 flex justify-center items-center">
+              <div className="bg-white rounded-[50%] w-12 h-12 p-1 border-2 border-myGry/40 flex justify-center items-center">
                 <Image src={"/icons/eye.png"} width={20} height={14} alt={""} />
               </div>
             </div>
@@ -134,7 +134,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
             <span>Additional Information</span>
             <span>Reviews (0)</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center justify-center text-myHeading mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center justify-center px-6 text-myHeading mt-16">
             <div>
               <Image
                 src={"/product-page/p1.png"}
@@ -143,7 +143,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
                 height={500}
               />
             </div>
-            <div className="text-myGry space-y-2">
+            <div className="text-myGry space-y-2 sm:space-y-0">
               <h2 className="font-bold text-myHeading text-2xl">
                 The quick fox jumps over
               </h2>

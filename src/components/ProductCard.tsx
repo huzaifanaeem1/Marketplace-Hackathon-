@@ -18,7 +18,7 @@ const ProductCard = ({
   colors?: string[];
 }) => {
   return (
-    <Link href={``} className="text-black hover:scale-105 duration-200">
+    <Link href={`/`} className="text-black hover:scale-105 duration-200">
       <div className=" flex justify-center items-center flex-col p-10">
         <div>
           <Image

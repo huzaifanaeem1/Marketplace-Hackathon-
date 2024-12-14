@@ -15,8 +15,8 @@ const HeroSection2 = () => {
             Product
           </h1>
           <p className="  font-medium leading-relaxed ">
-            We know how large objects will act, but things on a small scale.
-            SHOP NOW
+            We know how large objects will act, We know how are objects will
+            act, We know
           </p>
           <div className="flex justify-center items-center gap-6 flex-col sm:flex-row">
             <h3 className="font-semibold text-xl">$16.48</h3>

@@ -46,9 +46,13 @@ const Navbar = () => {
   return (
     <div className="w-full sm:py-4 sm:px-6 bg-white px-2 py-2 flex justify-between items-center border-b m-auto ">
       <div className="flex justify-center items-center gap-28">
-        <h1 className="sm:text-3xl text-xl font-bold text-myHeading">
+        {/* Logo */}
+        <Link
+          href={"/"}
+          className="sm:text-3xl text-xl font-bold text-myHeading"
+        >
           Bandage
-        </h1>
+        </Link>
 
         {/* Large-screen Nav Links */}
         <div className="hidden md:flex gap-6 items-center w-fit text-black">
@@ -86,8 +90,14 @@ const Navbar = () => {
         <div className="hidden lg:flex gap-2 items-center font-semibold text-[#23A6F0]">
           <Image src={"/icons/person.png"} alt="auth" width={12} height={12} />
           <span>
-            <Link href={"/login"}>Login </Link>/
-            <Link href={"/signup"}> Register</Link>{" "}
+            <Link href={"/login"} className="hover:underline">
+              Login{" "}
+            </Link>
+            /
+            <Link href={"/signup"} className="hover:underline">
+              {" "}
+              Register
+            </Link>{" "}
           </span>
         </div>
         <Link href="/search" className=" overflow-hidden">

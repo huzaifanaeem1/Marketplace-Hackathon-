@@ -1,33 +1,41 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      id: 1,
+      icon: "/icons/fb-blue.png",
+      url: "https://www.instagram.com",
+    },
+    {
+      id: 2,
+      icon: "/icons/insta-blu.png",
+      url: "https://www.instagram.com",
+    },
+    {
+      id: 3,
+      icon: "/icons/x-blu.png",
+      url: "https://www.instagram.com",
+    },
+  ];
   return (
     <footer className="bg-white text-black body-font">
       <div className="container px-5 py-8 mx-auto ">
         {/* footer head */}
         <div className=" w-full flex flex-col sm:flex-row justify-start sm:justify-between items-center mb-20 px-12">
-          <h1 className="text-3xl font-bold">Bandage</h1>
+          <Link href={"/"} className="text-3xl font-bold">
+            Bandage
+          </Link>
+
+          {/* Social Links */}
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start gap-4">
-            <a target="_blank">
-              <Image
-                src={"/icons/fb-blue.png"}
-                alt="fb"
-                width={23}
-                height={23}
-              />
-            </a>
-            <a target="_blank">
-              <Image
-                src={"/icons/insta-blu.png"}
-                alt="fb"
-                width={22}
-                height={22}
-              />
-            </a>
-            <a target="_blank">
-              <Image src={"/icons/x-blu.png"} alt="fb" width={22} height={18} />
-            </a>
+            {socialLinks.map((link) => (
+              <a href={link.url} key={link.id} target="_blank">
+                <Image src={link.icon} alt="fb" width={23} height={23} />
+              </a>
+            ))}
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:justify-center items-center">
@@ -38,7 +46,7 @@ const Footer = () => {
               <h2 className="title-font  text-myHeading tracking-widest text-sm mb-3">
                 Company info
               </h2>
-              <nav className="list-none mb-10 flex flex-col gap-4">
+              <nav className="list-none mb-10 flex flex-col gap-4 ">
                 <li>
                   <a>About us</a>
                 </li>
