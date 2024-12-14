@@ -53,7 +53,7 @@ const page = () => {
           <div className="lg:flex-grow md:w-1/2 my-16 md:pl-32 flex flex-col justify-center md:items-start md:text-left px-6 items-center text-center gap-6 ">
             <h3 className="font-semibold">WORK WITH US</h3>
             <h1 className="title-font text-4xl sm:text-5xl font-bold mt-2 ">
-              Now Let's grow yours
+              Now Let&apos;s grow yours
             </h1>
             <p className="font-medium leading-relaxed">
               The gradual accumulation of information about atomic and <br />

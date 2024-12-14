@@ -18,13 +18,18 @@ const PostCard = ({
   return (
     <div className=" text-black hover:scale-105 duration-200">
       <div className="h-full p-4 border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-        <Image
-          className="w-full object-cover object-center"
-          src={imgUrl}
-          alt="blog"
-          width={200}
-          height={200}
-        />
+        <div className="relative">
+          <Image
+            className="w-full object-cover object-center"
+            src={imgUrl}
+            alt="blog"
+            width={200}
+            height={200}
+          />
+          <div className="absolute top-6 left-6 bg-[#E74040] px-2 py-1 text-white font-semibold rounded-lg">
+            NEW
+          </div>
+        </div>
         <div className="sm:p-6 flex flex-col gap-3">
           <div className="flex gap-3 font-light text-sm sm:text-base">
             <span className="text-[#8EC2F2]">Google</span>
