@@ -25,7 +25,7 @@ const HeroSection = () => {
           </button>
         </div>
         <div>
-          <Image src={"/about/hero.png"} alt="" width={500} height={700} />
+          <Image src={"/about/hero1.png"} alt="" width={500} height={700} />
         </div>
       </div>
     </section>

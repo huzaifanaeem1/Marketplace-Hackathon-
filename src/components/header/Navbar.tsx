@@ -106,20 +106,13 @@ const Navbar = () => {
             alt={"search"}
             width={15}
             height={15}
-            className="w-full h-full object-cover"
           />
         </Link>
         <Link
           href={"/cart"}
           className="flex justify-center items-center gap-1 overflow-hidden"
         >
-          <Image
-            src={"/icons/cart.png"}
-            alt={"cart"}
-            width={15}
-            height={15}
-            className="w-full h-full object-cover"
-          />
+          <Image src={"/icons/cart.png"} alt={"cart"} width={15} height={15} />
           <span className="text-[#23A6F0]">1</span>
         </Link>
         <Link
@@ -131,7 +124,6 @@ const Navbar = () => {
             alt={"wishlist"}
             width={15}
             height={15}
-            className="w-full h-full object-cover"
           />
           <span className="text-[#23A6F0]">1</span>
         </Link>
