@@ -110,7 +110,7 @@ const Navbar = () => {
         </Link>
         <Link
           href={"/cart"}
-          className="flex justify-center items-center gap-1 overflow-hidden"
+          className="flex justify-center gap-1 items-center overflow-hidden"
         >
           <Image src={"/icons/cart.png"} alt={"cart"} width={15} height={15} />
           <span className="text-[#23A6F0]">1</span>
