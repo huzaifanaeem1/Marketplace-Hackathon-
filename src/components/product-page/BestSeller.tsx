@@ -78,7 +78,7 @@ const BestSeller = () => {
   ];
   return (
     <div className="py-12">
-      <div className="text-xl font-bold text-myHeading">
+      <div className="text-xl font-bold text-myHeading sm:ml-12 md:ml-28 lg:ml-20 xl:ml-12 text-center sm:text-left">
         <h1>BESTSELLER PRODUCTS</h1>
       </div>
       <div className="flex justify-center items-center flex-wrap ">

@@ -134,7 +134,7 @@ const page = async ({ params }: { params: { product_name: string } }) => {
             <span>Additional Information</span>
             <span>Reviews (0)</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center justify-center px-6 text-myHeading mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center justify-center px-6 text-myHeading mt-16 gap-6">
             <div>
               <Image
                 src={"/product-page/p1.png"}

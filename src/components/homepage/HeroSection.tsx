@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
@@ -20,7 +21,7 @@ const HeroSection = () => {
             type="button"
             className="bg-[#2DC071] px-6 py-3 rounded-md hover:scale-105 duration-200"
           >
-            SHOP NOW
+            <Link href={"/shop"}>SHOP NOW</Link>
           </button>
         </div>
       </div>
