@@ -35,7 +35,9 @@ const Pricing = () => {
             </p>
             <div className="flex justify-center items-center flex-col sm:flex-row mt-6 gap-4 font-bold text-myHeading">
               <span>Monthly</span>
-              <div className="border-2 border-myBlue rounded-3xl w-16 h-8 "></div>
+              <div className="border-2 border-myBlue rounded-3xl w-16 h-8 flex justify-start items-center">
+                <div className="ml-1 shadow-xl shadow-gray-400 w-6 h-6 rounded-[50%] border bg-gray-200 border-gray-400/40"></div>
+              </div>
               <span>Yearly</span>
               <div className="bg-myBlue/40 text-myBlue px-4 py-2 rounded-3xl">
                 Save 25%

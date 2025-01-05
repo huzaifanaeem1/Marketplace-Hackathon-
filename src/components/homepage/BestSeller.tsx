@@ -79,7 +79,7 @@ const BestSeller = () => {
   ];
   return (
     <section className="mt-20 ">
-      <div className="container px-5 py-20 mx-auto ">
+      <div className="container px-0 sm:px-5 py-20 mx-auto ">
         <div className="items-center text-center text-black space-y-2 px-4">
           <h3 className="text-2xl font-semibold text-[#737373]">
             Featured Products

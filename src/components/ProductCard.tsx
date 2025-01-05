@@ -22,13 +22,13 @@ const ProductCard = ({
       href={`/shop/abc`}
       className="text-black hover:scale-105 duration-200"
     >
-      <div className=" flex justify-center items-center flex-col p-10">
+      <div className=" flex justify-center items-center flex-col py-6 px-2 sm:p-10">
         <div>
           <Image
             className="object-cover object-center rounded "
             alt="product"
             src={imgUrl}
-            width={239}
+            width={300}
             height={300}
           />
         </div>

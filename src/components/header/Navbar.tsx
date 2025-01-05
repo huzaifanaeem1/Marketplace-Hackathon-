@@ -24,8 +24,8 @@ const Navbar = () => {
     },
     {
       id: 4,
-      name: "Blog",
-      slug: "/blog",
+      name: "Pricing",
+      slug: "/pricing",
     },
     {
       id: 5,
@@ -34,8 +34,8 @@ const Navbar = () => {
     },
     {
       id: 6,
-      name: "Pages",
-      slug: "/pages",
+      name: "Team",
+      slug: "/team",
     },
   ];
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +44,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="w-full sm:py-4 sm:px-6 bg-white px-2 py-2 flex justify-between items-center border-b m-auto ">
+    <div className="w-full sm:py-4 sm:px-6 bg-white px-4 py-2 flex justify-between items-center border-b m-auto ">
       <div className="flex justify-center items-center gap-28">
         {/* Logo */}
         <Link
@@ -113,7 +113,7 @@ const Navbar = () => {
           className="flex justify-center gap-1 items-center overflow-hidden"
         >
           <Image src={"/icons/cart.png"} alt={"cart"} width={15} height={15} />
-          <span className="text-[#23A6F0]">1</span>
+          <span className="text-[#23A6F0]">2</span>
         </Link>
         <Link
           href="/wishlist"
