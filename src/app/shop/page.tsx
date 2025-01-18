@@ -16,36 +16,31 @@ const ShopPage = () => {
 
   useEffect(() => {
     (async function () {
+      setLoading(true);
       try {
-        setLoading(true);
-        if (!products) {
-          const query = await client.fetch(
-            `*[_type == "product"]{_id, name, description, category, price, discountedPrice, colors , rating, reviews, 'image':image.asset->url, 'sec_image':sec_image.asset->url, sizes, stockQuantity, featured}`
-          );
-          const products: Product[] = query.map((product: any) => {
-            product.slug = stringToSlug(product.name);
-            product.price = product.price;
-            product.discountedPrice = product.discountedPrice;
-            return product;
-          });
-          console.log(products);
+        let query = await client.fetch(
+          `*[_type == "products"]{_id, name, description, category, price, discountPercent, colors , 'image':image.asset->url, sizes, isNew}`
+        );
 
-          setProducts(products);
-        }
-        if (!categories) {
-          const query = await client.fetch(
-            `*[_type == 'category']{_id, name, 'image':image.asset->url, productsCount}`
-          );
-          console.log(query);
-          setCategories(query);
-        }
+        const productsArr: Product[] = query.map((product: any) => {
+          product.slug = stringToSlug(product.name);
+          return product;
+        });
+        console.log(productsArr);
+
+        setProducts(productsArr);
+        query = await client.fetch(
+          `*[_type == 'category']{_id, name, 'image':image.asset->url, productsCount}`
+        );
+        console.log(query);
+        setCategories(query);
       } catch (error) {
         throw new Error("Error in fetch");
       } finally {
         setLoading(false);
       }
     })();
-  }, []);
+  });
 
   return (
     <div className="pt-40 bg-[#fafafa] text-black">
