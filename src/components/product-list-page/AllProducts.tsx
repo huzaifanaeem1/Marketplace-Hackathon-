@@ -28,7 +28,7 @@ const AllProducts = () => {
           category={product.category}
           imgUrl={product.image}
           price={product.price}
-          salePrice={product.discountedPrice}
+          discountPercent={product.discountPercent}
           colors={product.colors}
         />
       ))}
