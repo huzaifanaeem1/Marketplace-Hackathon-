@@ -23,7 +23,7 @@ const BestSeller = ({ category, name }: { category: string; name: string }) => {
             category={product.category}
             imgUrl={product.image}
             price={product.price}
-            salePrice={product.discountedPrice}
+            discountPercent={product.discountPercent}
           />
         ))}
       </div>
