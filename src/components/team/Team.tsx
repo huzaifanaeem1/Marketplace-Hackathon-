@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import TeamCard from "../aboutpage/TeamCard";
+import Link from "next/link";
 
 const Team = () => {
   const team = [
@@ -69,14 +70,18 @@ const Team = () => {
             Innovation tailored for you
           </h2>
           <div className="flex justify-center items-center gap-4 font-semibold mt-3 pb-12">
-            <h3>Home</h3>
+            <h3>
+              <Link href={"/"}>Home</Link>
+            </h3>
             <Image
               src={"/icons/left-icon.png"}
               alt="left"
               width={8.62}
               height={16}
             />
-            <h3 className="text-myGry">Team</h3>
+            <h3 className="text-myGry">
+              <Link href={"/team"}>Team</Link>
+            </h3>
           </div>
         </div>
         {/* Collage */}

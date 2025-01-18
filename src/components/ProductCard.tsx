@@ -1,31 +1,34 @@
+import { stringToSlug } from "@/myFunctions/stringToSlug";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const ProductCard = ({
   name,
+  slug,
   category,
   imgUrl,
   price,
-  salePrice,
+  discountPercent,
   colors,
 }: {
   name: string;
+  slug: string;
   category: string;
   imgUrl: string;
-  price: string;
-  salePrice: string;
+  price: number;
+  discountPercent: number;
   colors?: string[];
 }) => {
   return (
     <Link
-      href={`/shop/abc`}
+      href={`/shop/${category}/${slug}`}
       className="text-black hover:scale-105 duration-200"
     >
-      <div className=" flex justify-center items-center flex-col py-6 px-2 sm:p-10">
-        <div>
+      <div className=" flex justify-center items-center flex-col py-6 px-2 sm:p-5">
+        <div className="w-[200px] h-[200px] overflow-hidden object-center object-cover">
           <Image
-            className="object-cover object-center rounded "
+            className="object-contain object-center rounded "
             alt="product"
             src={imgUrl}
             width={300}
@@ -34,19 +37,20 @@ const ProductCard = ({
         </div>
         <div className="flex justify-center items-center flex-col gap-3 mt-3 font-semibold">
           <h3 className="">{name}</h3>
-          <h4 className="text-[#737373]">{category}</h4>
+          <h4 className="text-[#737373]">{category.toUpperCase()}</h4>
           <div className="flex gap-2">
-            <span className="text-[#bdbdbd]">{price}</span>
-            <span className="text-[#23856D]">{salePrice}</span>
+            <span className="text-[#bdbdbd] line-through">{price}</span>
+            <span className="text-[#23856D]">
+              {(discountPercent / 100) * price}
+            </span>
           </div>
 
-          {colors && (
-            <div className="flex gap-[5px]">
-              {colors.map((color, index) => (
+          <div className="flex gap-[5px]">
+            {colors &&
+              colors?.map((color, index) => (
                 <div key={index} className={`${color} w-4 h-4 rounded-[50%]`} />
               ))}
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </Link>

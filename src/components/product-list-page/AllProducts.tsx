@@ -1,127 +1,34 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
+import { client } from "@/sanity/lib/client";
+import { useProducts } from "@/context/productsContext";
+
+interface Product {
+  _id: number;
+  name: string;
+  category: string;
+  price: number;
+  discountedPrice: number;
+  colors?: string[];
+  image: string;
+}
 
 const AllProducts = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product1.png",
-    },
-    {
-      id: 2,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product2.png",
-    },
-    {
-      id: 3,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product3.png",
-    },
-    {
-      id: 4,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product4.png",
-    },
-    {
-      id: 5,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product5.png",
-    },
-    {
-      id: 6,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product6.png",
-    },
-    {
-      id: 7,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product7.png",
-    },
-    {
-      id: 8,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product8.png",
-    },
-    {
-      id: 9,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product9.png",
-    },
-    {
-      id: 10,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product10.png",
-    },
-    {
-      id: 11,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product11.png",
-    },
-    {
-      id: 12,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product12.png",
-    },
-  ];
+  const { products } = useProducts();
+
   return (
     <div className="flex justify-center items-center gap-4 flex-wrap py-12 bg-white">
-      {products.map((product) => (
+      {products?.map((product) => (
         <ProductCard
-          key={product.id}
+          key={product._id}
           name={product.name}
+          slug={product.slug}
           category={product.category}
-          imgUrl={product.imgUrl}
+          imgUrl={product.image}
           price={product.price}
-          salePrice={product.salePrice}
+          salePrice={product.discountedPrice}
           colors={product.colors}
         />
       ))}

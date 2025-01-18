@@ -1,82 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import ProductCard from "../ProductCard";
+import { Product } from "@/context/productsContext";
 
-const BestSeller = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-1.png",
-    },
-    {
-      id: 2,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-2.png",
-    },
-    {
-      id: 3,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-3.png",
-    },
-    {
-      id: 4,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-4.png",
-    },
-    {
-      id: 5,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-5.png",
-    },
-    {
-      id: 6,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-6.png",
-    },
-    {
-      id: 7,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-7.png",
-    },
-    {
-      id: 8,
-      name: "Graphic Design",
-      category: "English Department",
-      price: "$16.48",
-      salePrice: "$6.48",
-      colors: ["bg-blue-600", "bg-green-600", "bg-orange-600", "bg-purple-600"],
-      imgUrl: "/products/product-8.png",
-    },
-  ];
+const BestSeller = ({ products }: { products: Product[] }) => {
+  const filteredProducts = products.filter((product) => product.isNew);
   return (
     <section className="mt-20 ">
       <div className="container px-0 sm:px-5 py-20 mx-auto ">
@@ -89,15 +17,16 @@ const BestSeller = () => {
             Problems trying to resolve the conflict between
           </h6>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-12 ">
-          {products.map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-12 gap-4 ">
+          {filteredProducts.map((product) => (
             <ProductCard
-              key={product.id}
+              key={product._id}
               name={product.name}
-              imgUrl={product.imgUrl}
+              slug={product.slug}
+              imgUrl={product.image}
               category={product.category}
               price={product.price}
-              salePrice={product.salePrice}
+              discountPercent={product.discountPercent}
               colors={product.colors}
             />
           ))}

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Payment from "../product-list-page/Payment";
 import PricingCard from "./PricingCard";
+import Link from "next/link";
 
 const Pricing = () => {
   return (
@@ -14,14 +15,18 @@ const Pricing = () => {
             Simple Pricing
           </h2>
           <div className="flex justify-center items-center gap-4 font-semibold mt-3 pb-12">
-            <h3>Home</h3>
+            <h3>
+              <Link href={"/"}>Home</Link>
+            </h3>
             <Image
               src={"/icons/left-icon.png"}
               alt="left"
               width={8.62}
               height={16}
             />
-            <h3 className="text-myGry">Pricing</h3>
+            <h3 className="text-myGry">
+              <Link href={"/pricing"}>Pricing</Link>
+            </h3>
           </div>
         </div>
 

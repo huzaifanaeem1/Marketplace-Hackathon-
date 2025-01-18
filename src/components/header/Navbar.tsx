@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
+import { useCart } from "@/context/cartContext";
 
 const Navbar = () => {
+  const { cartItems } = useCart();
   const navLinks = [
     {
       id: 1,
@@ -113,7 +115,7 @@ const Navbar = () => {
           className="flex justify-center gap-1 items-center overflow-hidden"
         >
           <Image src={"/icons/cart.png"} alt={"cart"} width={15} height={15} />
-          <span className="text-[#23A6F0]">2</span>
+          <span className="text-[#23A6F0]">{cartItems.length}</span>
         </Link>
         <Link
           href="/wishlist"
