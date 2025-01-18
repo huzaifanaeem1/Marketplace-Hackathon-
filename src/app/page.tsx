@@ -41,7 +41,7 @@ export default function Home() {
         throw new Error("Error in fetch");
       }
     })();
-  }, []);
+  });
   return (
     <div className="bg-white">
       <HeroSection />

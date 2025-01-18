@@ -9,7 +9,7 @@ import { Product, useProducts } from "@/context/productsContext";
 import { stringToSlug } from "@/myFunctions/stringToSlug";
 import { client } from "@/sanity/lib/client";
 
-const page = () => {
+const ShopPage = () => {
   const { categories, setCategories } = useCategories();
   const { products, setProducts } = useProducts();
   const [loading, setLoading] = useState(false);
@@ -127,4 +127,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ShopPage;

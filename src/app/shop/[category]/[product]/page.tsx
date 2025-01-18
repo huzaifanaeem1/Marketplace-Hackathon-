@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useProducts } from "@/context/productsContext";
 import { useCart } from "@/context/cartContext";
 
-const page = ({ params }: { params: { product: string } }) => {
+const ProductPage = ({ params }: { params: { product: string } }) => {
   const productSlug = params.product;
   const { products } = useProducts();
   const { handleCart } = useCart();
@@ -211,4 +211,4 @@ const page = ({ params }: { params: { product: string } }) => {
   );
 };
 
-export default page;
+export default ProductPage;
