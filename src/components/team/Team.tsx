@@ -112,8 +112,7 @@ const Team = () => {
                 key={user.id}
                 username={user.username}
                 profession={user.profession}
-                imgUrl={user.imgUrl}
-              />
+                imgUrl={user.imgUrl} fbUrl={""} instaUrl={""} xUrl={""}              />
             ))}
           </div>
         </div>
