@@ -1,4 +1,4 @@
-export default  {
+const categorySchema = {
   name: "category",
   type: "document",
   title: "Categories",
@@ -23,7 +23,6 @@ export default  {
       type: "string",
       title: "Parent Category",
     },
-
     {
       name: "tags",
       type: "array",
@@ -33,7 +32,6 @@ export default  {
         layout: "tags",
       },
     },
-
     {
       name: "image",
       type: "image",
@@ -44,3 +42,5 @@ export default  {
     },
   ],
 };
+
+export default categorySchema;

@@ -78,17 +78,19 @@ const SearchPage = () => {
          
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {searchResults.map((product) => (
-                <ProductCard
-                  name={product.name}
-                  slug={product.slug}
-                  category={product.category}
-                  imgUrl={product.image}
-                  price={product.price}
-                  discountPercent={product.discountPercent}
-                />
-              ))}
-            </div>
+            {searchResults.map((product) => (
+              <ProductCard
+                key={product.slug}  // or use product.name if slug isn't unique
+                name={product.name}
+                slug={product.slug}
+                category={product.category}
+                imgUrl={product.image}
+                price={product.price}
+                discountPercent={product.discountPercent}
+              />
+            ))}
+          </div>
+          
           )}
         </div>
       </div>
