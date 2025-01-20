@@ -33,18 +33,21 @@ const CartItemContext = createContext<CartItemType | undefined>(undefined);
 
 export const CartItemProvier = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const storedCart = localStorage.getItem("cart");
-    return storedCart ? JSON.parse(storedCart) : [];
+    if (typeof window !== "undefined") {
+      const storedCart = localStorage.getItem("cartItem");
+      return storedCart ? JSON.parse(storedCart) : [];
+    }
+    return [];
   });
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    localStorage.setItem("cartItem", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const handleCart = (product: Product) => {
     const existingItem = cartItems.find((item) => item._id === product._id);
 
     if (existingItem) {
-      // If item exists, increase quantity
+
       setCartItems(
         cartItems.map((item) =>
           item._id === product._id
@@ -53,7 +56,7 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
         )
       );
     } else {
-      // If item doesn't exist, add new item with quantity 1
+   
       const cartItem: CartItem = {
         _id: product._id,
         productName: product.name,

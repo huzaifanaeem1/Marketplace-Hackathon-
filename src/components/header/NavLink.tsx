@@ -14,7 +14,7 @@ const NavLink = ({
     <Link
       href={slug}
       onClick={onclick}
-      className="text-base font-semibold hover:underline text-myGry"
+      className="text-base font-semibold hover:underline text-white hover:text-myGry"
     >
       {name}
     </Link>

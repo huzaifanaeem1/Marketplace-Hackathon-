@@ -5,14 +5,14 @@ import { Product } from "@/context/productsContext";
 
 const BestSeller = ({ products }: { products: Product[] }) => {
   const filteredProducts = products.filter((product) => product.isNew);
-  return (
+  return ( 
     <section className="mt-20 ">
       <div className="container px-0 sm:px-5 py-20 mx-auto ">
-        <div className="items-center text-center text-black space-y-2 px-4">
-          <h3 className="text-2xl font-semibold text-[#737373]">
+        <div className="items-center text-center text-myGry space-y-2 px-4">
+          <h3 className="text-2xl font-semibold]">
             Featured Products
           </h3>
-          <h1 className="text-3xl font-bold">BESTSELLER PRODUCTS</h1>
+          <h1 className="text-3xl font-bold text-[#272343]">BEST SELLER PRODUCTS</h1>
           <h6 className="text-[#737373]">
             Problems trying to resolve the conflict between
           </h6>

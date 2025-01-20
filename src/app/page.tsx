@@ -2,12 +2,11 @@
 
 import {
   ContainerFluid,
-  HeroSection,
-  HeroSection2,
   HomeBestSeller,
   FeaturedPosts,
   EditorsPick,
 } from "@/components/";
+import HeroSection2 from "@/components/homepage/HeroSection2";
 import { useCategories } from "@/context/categoryContext";
 import { Product, useProducts } from "@/context/productsContext";
 import { stringToSlug } from "@/myFunctions/stringToSlug";
@@ -22,11 +21,13 @@ export default function Home() {
     (async function () {
       try {
         let query = await client.fetch(
-          `*[_type == "products"]{_id, name, description, category, price, discountPercent, colors , 'image':image.asset->url, sizes, isNew}`
+          `*[_type == "product"]{_id, _createdAt, name, description, category, price, discountPercent, colors , 'image':image.asset->url, sizes, isNew}`
         );
 
         const productsArr: Product[] = query.map((product: any) => {
           product.slug = stringToSlug(product.name);
+          product.tags = [];
+          product.stocks = 20;
           return product;
         });
         console.log(productsArr);
@@ -44,10 +45,9 @@ export default function Home() {
   });
   return (
     <div className="bg-white">
-      <HeroSection />
+   <HeroSection2/>
       <EditorsPick />
       {products ? <HomeBestSeller products={products} /> : <div>loading</div>}
-      <HeroSection2 />
       <ContainerFluid />
       <FeaturedPosts />
     </div>

@@ -8,6 +8,8 @@ import { useCategories } from "@/context/categoryContext";
 import { Product, useProducts } from "@/context/productsContext";
 import { stringToSlug } from "@/myFunctions/stringToSlug";
 import { client } from "@/sanity/lib/client";
+import Filtering from "@/components/filter/Filtering";
+import { FilterState } from "@/types/filterTypes";
 
 const ShopPage = () => {
   const { categories, setCategories } = useCategories();
@@ -19,11 +21,13 @@ const ShopPage = () => {
       setLoading(true);
       try {
         let query = await client.fetch(
-          `*[_type == "products"]{_id, name, description, category, price, discountPercent, colors , 'image':image.asset->url, sizes, isNew}`
+          `*[_type == "product"]{_id, _createdAt, name, description, category, price, discountPercent, colors , 'image':image.asset->url, sizes, isNew}`
         );
 
         const productsArr: Product[] = query.map((product: any) => {
           product.slug = stringToSlug(product.name);
+          product.tags = [];
+          product.stocks = 20;
           return product;
         });
         console.log(productsArr);
@@ -40,8 +44,37 @@ const ShopPage = () => {
         setLoading(false);
       }
     })();
-  });
+  },[]) ;
+  const handleFilterChange = (newFilters: FilterState) => {
+    let filteredProducts = [...products];
 
+    filteredProducts = filteredProducts.filter(
+      (product) =>
+        product.price >= newFilters.priceRange.min &&
+        product.price <= newFilters.priceRange.max
+    );
+    if (newFilters.inStock) {
+      filteredProducts = filteredProducts.filter((product) => product);
+    }
+
+    filteredProducts.sort((a, b) => {
+      switch (newFilters.sortBy) {
+        case "priceLowToHigh":
+          return a.price - b.price;
+        case "priceHighToLow":
+          return b.price - a.price;
+        case "newest":
+          return (
+            new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
+          );
+        case "popularity":
+        default:
+          // Implement popularity sorting logic baad me
+          return 0;
+      }
+    });
+    setProducts(filteredProducts);
+  };
   return (
     <div className="pt-40 bg-[#fafafa] text-black">
       <div>
@@ -88,7 +121,7 @@ const ShopPage = () => {
                   alt="view"
                   width={14}
                   height={14}
-                />
+                />  
                 <Image
                   src={"/icons/view2.png"}
                   alt="view"
@@ -96,21 +129,14 @@ const ShopPage = () => {
                   height={14}
                 />
               </div>
-              <div className="flex justify-center items-center gap-4">
-                <button className="flex justify-center items-center gap-2 font-normal border border-gray-300 rounded-lg px-6 py-3">
-                  Popularity
-                  <Image
-                    src={"/icons/dropdown1.png"}
-                    alt="dropdown"
-                    width={14}
-                    height={14}
-                  />
-                </button>
-                <button className="bg-myBlue rounded-lg px-6 py-3 text-white">
-                  Filter
-                </button>
+             
+              
+                <Filtering
+                onFilterChange={handleFilterChange}
+                products={products}
+              />
               </div>
-            </div>
+            
             {/* All products */}
             <AllProducts />
             <Pagination />

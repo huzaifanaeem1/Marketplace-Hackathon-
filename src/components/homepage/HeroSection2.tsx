@@ -1,45 +1,32 @@
+import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 
-const HeroSection2 = () => {
+const HeroSection = () => {
   return (
     <section
-      className="bg-cover bg-center text-white body-font "
-      style={{ backgroundImage: "url('/banners/hero-2.jpg')" }}
+      className="w-full bg-cover bg-center h-screen body-font text-[#272343] relative"
+      style={{ backgroundImage: 'url("/home/home-bg.jpg")' }}
     >
-      <div className="container mx-auto flex px-5 pt-20 md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-1/2 mt-20 lg:mt-28 md:pl-16 flex flex-col md:items-start md:text-left mb-16 sm:mb-0 items-center text-center gap-6">
-          <h3 className="font-semibold">SUMMER 2020</h3>
-          <h1 className="title-font text-4xl sm:text-6xl font-bold ">
-            Vita Classic <br className="hidden lg:inline-block" />
-            Product
+      <div className="absolute inset-0 bg-black opacity-50 z-0" /> {/* Semi-transparent overlay */}
+      <div className="container mx-auto flex justify-center items-center h-full relative">
+        <div className="text-center flex flex-col items-center gap-6">
+          <h3 className="font-semibold text-white text-xl sm:text-2xl">SUMMER 2025</h3>
+          <h1 className="title-font text-4xl sm:text-5xl font-bold mt-2 text-white">
+            NEW COLLECTION
           </h1>
-          <p className="  font-medium leading-relaxed ">
-            We know how large objects will act, We know how are objects will
-            act, We know
+          <p className="font-medium leading-relaxed text-white text-base sm:text-lg">
+            We know how large objects will act, <br /> but things on a small scale.
           </p>
-          <div className="flex justify-center items-center gap-6 flex-col sm:flex-row">
-            <h3 className="font-semibold text-xl">$16.48</h3>
-            <button
-              type="button"
-              className="bg-[#2DC071] px-6 py-3 rounded-md hover:scale-105 duration-200"
-            >
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-        <div>
-          <Image
-            className="object-cover object-center  "
-            alt="product"
-            src={"/banners/hero-img.png"}
-            width={400}
-            height={600}
-          />
+          <button
+            type="button"
+            className="bg-[#272343] px-6 py-3 rounded-md hover:scale-105 duration-200"
+          >
+            <Link href={"/shop"} className="text-white">SHOP NOW</Link>
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-export default HeroSection2;
+export default HeroSection;

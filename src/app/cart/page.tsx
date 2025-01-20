@@ -41,28 +41,30 @@ const Page = () => {
             </div>
             {/* summary */}
             {cartItems && (
-              <div className=" text-[#111111]">
-                <h4 className="text-2xl  font-medium mb-4 ">Summary</h4>
-                <div className="mt-3 text-[15px]">
-                  <div className="flex justify-between">
-                    Subtotal <span className="font-medium">${cartTotal}</span>
-                  </div>
-                  <div className="flex justify-between gap-2">
-                    Estimated Delivery & Handling{" "}
-                    <span className="font-medium">Free</span>
-                  </div>
-                  <div className="flex justify-between my-2 py-3 border-y border-[#E5E5E5]">
-                    <span>Total</span>{" "}
-                    <span className="font-medium">${cartTotal}</span>
-                  </div>
+              <div className="border rounded-lg p-6 shadow-md">
+              <h4 className="text-2xl font-medium mb-4">Summary</h4>
+              <div className="mt-3 text-sm">
+                <div className="flex justify-between py-2">
+                  <span>Subtotal</span> 
+                  <span className="font-medium">${cartTotal}</span>
                 </div>
-                <Link
-                  href={"/checkout"}
-                  className="w-full rounded-[30px] mt-5 px-4 py-3 text-white bg-myBlue hover:scale-105 duration-300"
-                >
-                  Member Checkout
-                </Link>
+                <div className="flex justify-between py-2">
+                  <span>Estimated Delivery & Handling</span>
+                  <span className="font-medium">Free</span>
+                </div>
+                <div className="flex justify-between py-4 border-t border-b border-gray-200">
+                  <span>Total</span>
+                  <span className="text-lg font-semibold">${cartTotal}</span>
+                </div>
               </div>
+              <Link
+                href="/checkout"
+                className="block w-full mt-5 px-4 py-3 text-center text-white bg-myHeading rounded-lg hover:bg-myBlue-dark transition-all duration-300"
+              >
+                Member Checkout
+              </Link>
+            </div>
+            
             )}
           </div>
         ) : (

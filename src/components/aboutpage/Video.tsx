@@ -1,16 +1,21 @@
 import React from "react";
-import Image from "next/image";
 
 const Video = () => {
   return (
     <div className="w-full px-8 sm:px-16 md:px-28 lg:px-44 py-16">
-      <div
-        style={{ backgroundImage: "url('about/video.png')" }}
-        className="bg-cover bg-center h-auto flex justify-center items-center rounded-3xl"
-      >
-        <div className="bg-myBlue p-6 rounded-[50%] m-28 md:m-48">
-          <Image src={"/icons/pause.png"} alt="" width={16} height={16} />
-        </div>
+      <div className="relative w-full h-96">
+        {/* Embedded Video */}
+        <video
+          className="absolute inset-0 w-full h-full rounded-3xl"
+          controls
+          autoPlay
+          muted
+        >
+          <source src="/about/vedio.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Optional Background Overlay */}
       </div>
     </div>
   );

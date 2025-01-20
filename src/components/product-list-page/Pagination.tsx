@@ -8,16 +8,16 @@ const Pagination = () => {
           <div className="col-span-2 flex items-center justify-center text-myGry">
             First
           </div>
-          <div className="flex items-center justify-center text-myBlue border-2 border-gray-300">
+          <div className="flex items-center justify-center text-myHeading border-2 border-gray-300">
             1
           </div>
-          <div className="flex items-center justify-center bg-myBlue text-white">
+          <div className="flex items-center justify-center bg-myHeading text-white">
             2
           </div>
-          <div className="flex items-center justify-center text-myBlue border-2 border-gray-300">
+          <div className="flex items-center justify-center text-myHeading border-2 border-gray-300">
             3
           </div>
-          <div className="col-span-2 flex items-center justify-center text-myBlue">
+          <div className="col-span-2 flex items-center justify-center text-myHeading">
             Next
           </div>
         </div>

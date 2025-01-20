@@ -17,7 +17,7 @@ const EditorsPick = () => {
           <div className=" sm:col-span-2 row-span-1 sm:row-span-2 relative w-full h-full ">
             <Link href={"/shop/mens"}>
               <div className="h-full w-full z-[1] flex flex-col gap-2 justify-end absolute bottom-3 sm:bottom-5 lg:bottom-10 left-3 sm:left-5 lg:left-10">
-                <h1 className="text-lg md:text-2xl bg-white w-fit px-4 font-semibold text-black text-center py-2">
+                <h1 className="text-lg md:text-2xl bg-[#272343] w-fit px-4 font-semibold text-white text-center py-2">
                   MEN
                 </h1>
               </div>
@@ -34,7 +34,7 @@ const EditorsPick = () => {
           <div className="sm:col-span-1 row-span-1 sm:row-span-2 flex justify-between relative p-4 w-full h-full">
             <Link href={"/shop/womens"}>
               <div className="h-full w-full z-[1] flex flex-col gap-2 justify-end absolute bottom-3 sm:bottom-5 lg:bottom-10 left-3 sm:left-5 lg:left-10">
-                <h1 className="text-lg md:text-2xl bg-white w-fit px-4 font-semibold text-black text-center py-2">
+                <h1 className="text-lg md:text-2xl bg-[#272343] w-fit px-4 font-semibold text-white text-center py-2">
                   WOMEN
                 </h1>
               </div>
@@ -51,7 +51,7 @@ const EditorsPick = () => {
           <div className="sm:col-span-1 row-span-1 p-4 relative w-full h-full">
             <Link href={"/shop/accessories"}>
               <div className="h-full w-full z-[1] flex flex-col gap-2 justify-end absolute bottom-3 sm:bottom-5 lg:bottom-10 left-3 sm:left-5 lg:left-10">
-                <h1 className="text-lg md:text-2xl bg-white w-fit px-4 font-semibold text-black text-center py-2">
+                <h1 className="text-lg md:text-2xl bg-[#272343] w-fit px-4 font-semibold text-white text-center py-2">
                   ACCESSORIES
                 </h1>
               </div>
@@ -68,7 +68,7 @@ const EditorsPick = () => {
           <div className="sm:col-span-1 row-span-1 p-4 relative w-full h-full">
             <Link href={"/shop/kids"}>
               <div className="h-full w-full z-[1] flex flex-col gap-2 justify-end absolute bottom-3 sm:bottom-5 lg:bottom-10 left-3 sm:left-5 lg:left-10">
-                <h1 className="text-lg md:text-2xl bg-white w-fit px-4 font-semibold text-black text-center py-2">
+                <h1 className="text-lg md:text-2xl bg-[#272343] w-fit px-4 font-semibold text-white text-center py-2">
                   KIDS
                 </h1>
               </div>

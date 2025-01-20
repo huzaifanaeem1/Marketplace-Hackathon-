@@ -5,8 +5,6 @@ import HomeBestSeller from "./homepage/BestSeller";
 import ContainerFluid from "./homepage/ContainerFluid";
 import EditorsPick from "./homepage/EditorsPick";
 import FeaturedPosts from "./homepage/FeaturedPosts";
-import HeroSection from "./homepage/HeroSection";
-import HeroSection2 from "./homepage/HeroSection2";
 import Pricing from "./pricing/Pricing";
 import AllProducts from "./product-list-page/AllProducts";
 import CategoryCard from "./product-list-page/categoryCard";
@@ -23,6 +21,12 @@ import OurTeam from "./aboutpage/OurTeam";
 import ContactHeroSection from "./contactpage/HeroSection";
 import OurOffice from "./contactpage/OurOffice";
 import LetsTalk from "./contactpage/LetsTalk";
+import HeroSection2 from "./homepage/HeroSection2";
+import LoginPage from "@/app/(auth)/login/page";
+import SignUpPage from "@/app/(auth)/signup/page";
+import SearchField from "./searchbar/SearchField";
+import Filtering from "./filter/Filtering";
+
 
 export {
   Footer,
@@ -32,7 +36,6 @@ export {
   ContainerFluid,
   EditorsPick,
   FeaturedPosts,
-  HeroSection,
   HeroSection2,
   Pricing,
   AllProducts,
@@ -50,4 +53,8 @@ export {
   ContactHeroSection,
   OurOffice,
   LetsTalk,
+ LoginPage,
+ SignUpPage,
+ SearchField,
+ Filtering
 };

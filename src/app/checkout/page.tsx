@@ -67,7 +67,7 @@ export default function CheckoutPage() {
                       <span className="font-medium">${cartTotal}</span>
                     </div>
                   </div>
-                  <button className="w-full rounded-[30px] mt-5 px-4 py-3 text-white bg-myBlue hover:scale-105 duration-300">
+                  <button className="w-full rounded-[30px] mt-5 px-4 py-3 text-white bg-myHeading hover:scale-105 duration-300">
                     Member Checkout
                   </button>
                 </div>

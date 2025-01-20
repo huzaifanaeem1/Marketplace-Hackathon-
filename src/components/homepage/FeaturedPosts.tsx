@@ -9,7 +9,7 @@ const FeaturedPosts = () => {
       title: "Loudest à la Madison #1 (L'integral)",
       desc:
         "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-      date: "22 April 2021",
+      date: "19 January 2025",
       commentCount: 10,
     },
     {
@@ -18,7 +18,7 @@ const FeaturedPosts = () => {
       title: "Loudest à la Madison #1 (L'integral)",
       desc:
         "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-      date: "22 April 2021",
+      date: "16 January 2025",
       commentCount: 10,
     },
     {
@@ -27,15 +27,16 @@ const FeaturedPosts = () => {
       title: "Loudest à la Madison #1 (L'integral)",
       desc:
         "We focus on ergonomics and meeting you where you work. It's only a keystroke away.",
-      date: "22 April 2021",
+      date: "15 January 2025",
       commentCount: 10,
     },
   ];
+
   return (
     <section className="mt-20">
-      <div className="container px-5 py-20 mx-auto">
-        <div className="items-center text-center text-black space-y-2">
-          <h3 className="text-xl font-semibold text-[#23A6F0]">
+      <div className="container px-16 py-20 mx-auto">
+        <div className="items-center text-center text-[#272343] space-y-2">
+          <h3 className="text-xl font-semibold text-myGry">
             Practice Advice
           </h3>
           <h1 className="text-4xl font-bold">Featured Posts</h1>
@@ -45,7 +46,7 @@ const FeaturedPosts = () => {
           </h6>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-12 space-y-3 sm:space-y-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
           {posts.map((post) => (
             <PostCard
               key={post.id}

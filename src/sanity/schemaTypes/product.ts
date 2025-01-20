@@ -1,92 +1,69 @@
-export default {
-  name: "product",
-  type: "document",
-  title: "Products",
-  fields: [
-    {
-      name: "name",
-      type: "string",
-      title: "Product Name",
-    },
-    {
-      name: "description",
-      type: "string",
-      title: "Description",
-    },
-    {
-      name: "category",
-      type: "string",
-      title: "Category",
-    },
-    {
-      name: "price",
-      type: "number",
-      title: "Product Price",
-    },
-    {
-      name: "discountedPrice",
-      type: "number",
-      title: "Price with Discount",
-    },
-    {
-      name: "rating",
-      type: "number",
-      title: "Rating",
-      description: "Rating of the product",
-    },
-    {
-      name: "reviews",
-      type: "number",
-      title: "Reviews",
-      description: "Reviews of the product",
-    },
-    {
-      name: "stockQuantity",
-      type: "number",
-      title: "Stock",
-      description: "Quantity of the product",
-    },
-    {
-      name: "featured",
-      type: "boolean",
-      title: "is Featured?",
-    },
+import { defineType } from "sanity"
 
-    {
-      name: "colors",
-      type: "array",
-      title: "Colors",
-      of: [{ type: "string" }],
-      options: {
-        layout: "colors",
-      },
-    },
-
-    {
-      name: "sizes",
-      type: "array",
-      title: "Sizes",
-      of: [{ type: "string" }],
-      options: {
-        layout: "tags",
-      },
-      description: "Add sizes like S , M , L , XL , XXL",
-    },
-    {
-      name: "image",
-      type: "image",
-      title: "Product Image 1",
-      options: {
-        hotspot: true, // Enables cropping and focal point selection
-      },
-    },
-    {
-      name: "sec_image",
-      type: "image",
-      title: "Product Image 2",
-      options: {
-        hotspot: true, // Enables cropping and focal point selection
-      },
-    },
-  ],
-};
+export default defineType({
+    name: 'product',
+    title: 'Products',
+    type: 'document',
+    fields: [
+        {
+        name: 'name',
+        title: 'Name',
+        type: 'string',
+        },
+        {
+        name: 'price',
+        title: 'Price',
+        type: 'number',
+        },
+        {
+        name: 'description',
+        title: 'Description',
+        type: 'text',
+        },
+        {
+        name: 'image',
+        title: 'Image',
+        type: 'image',
+        },
+        {
+            name:"category",
+            title:"Category",
+            type: 'string',
+            options:{
+                list:[
+                   {title: 'T-Shirt', value: 'tshirt'},
+                   {title: 'Short', value: 'short'}, 
+                   {title: 'Jeans', value: 'jeans'} ,
+                   {title: 'Hoddie', value: 'hoodie'} ,
+                   {title: 'Shirt', value: 'shirt'} ,
+                ]
+            }
+        },
+        {
+            name:"discountPercent",
+            title:"Discount Percent",
+            type: 'number',
+        },
+        {
+            name:"new",
+            type: 'boolean',
+            title:"New",
+        },
+        {
+            name:"colors",
+            title:"Colors",
+            type: 'array',
+            of:[
+                {type: 'string'}
+            ]
+        },
+        {
+            name:"sizes",
+            title:"Sizes",
+            type: 'array',
+            of:[
+                {type: 'string'}
+            ]
+        }
+    ],
+})

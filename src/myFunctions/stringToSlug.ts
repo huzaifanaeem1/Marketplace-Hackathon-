@@ -6,3 +6,4 @@ export const stringToSlug = (title: string) => {
     .replace(/\s+/g, "-") // Replace spaces with dashes
     .replace(/-+/g, "-"); // Remove multiple dashes
 };
+ 

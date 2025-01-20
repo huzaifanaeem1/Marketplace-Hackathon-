@@ -5,7 +5,6 @@ import { stringToSlug } from "@/myFunctions/stringToSlug";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { CiHeart } from "react-icons/ci";
 import { IoTrashOutline } from "react-icons/io5";
 
 const CartCard = ({ item }: { item: CartItem }) => {
@@ -25,22 +24,21 @@ const CartCard = ({ item }: { item: CartItem }) => {
             href={`/shop/${item.productCategory}/${stringToSlug(
               item.productName
             )}`}
-          >
+          > 
             <h6 className="text-base">{item.productName}</h6>
             <p className="text-[#737373] lg:mt-6  text-[14px] tracking-wide">
               {item.productCategory.toUpperCase()}
             </p>
             <div className="text-[#737373] lg:mb-6 lg:mt-2 text-[14px] tracking-wider flex items-center  gap-8">
-              <p>
+              {/* <p>
                 Size <span>{item.size}</span>
-              </p>
+              </p> */}
               <p>
                 Quantity <span>{item.quantity}</span>
               </p>
             </div>
           </Link>
           <div className="flex justify-start mt-2 gap-4">
-            <CiHeart className="size-7" />
             <button onClick={() => handleDelete(item._id)}>
               <IoTrashOutline className="size-7" />
             </button>
