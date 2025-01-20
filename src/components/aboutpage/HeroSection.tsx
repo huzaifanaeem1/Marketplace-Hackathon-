@@ -16,12 +16,13 @@ const HeroSection = () => {
             About Us
           </h1>
           <p className="text-myGry text-sm sm:text-base font-medium leading-relaxed">
-            Welcome to <strong>Stylezy</strong>, your one-stop destination for the latest fashion trends! <br />
-            At Stylezy, we offer a wide range of stylish and affordable clothing and accessories for every occasion. 
-            Whether you're looking for casual wear, formal outfits, or trendy accessories, we've got you covered. 
-            Our collection is curated to provide the perfect balance of comfort, quality, and style, all at great prices. 
-            Shop with us today and elevate your wardrobe with the best in fashion!
-          </p>
+  Welcome to <strong>Stylezy</strong>, your one-stop destination for the latest fashion trends! <br />
+  At Stylezy, we offer a wide range of stylish and affordable clothing and accessories for every occasion. 
+  Whether you&apos;re looking for casual wear, formal outfits, or trendy accessories, we&apos;ve got you covered. 
+  Our collection is curated to provide the perfect balance of comfort, quality, and style, all at great prices. 
+  Shop with us today and elevate your wardrobe with the best in fashion!
+</p>
+
           <a href="/contact">
             <button
               type="button"

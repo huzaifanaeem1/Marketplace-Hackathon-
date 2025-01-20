@@ -36,8 +36,9 @@ const OurTeam = () => {
         <div className="flex justify-center items-center flex-col text-center text-myHeading mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h1>
           <h6 className="text-myGry text-sm md:text-base font-semibold mb-2">
-            We're a group of passionate professionals dedicated to delivering the best.
-          </h6>
+  We&apos;re a group of passionate professionals dedicated to delivering the best.
+</h6>
+
           <h6 className="text-myGry text-sm md:text-base font-semibold">
             Our team members come from diverse backgrounds with years of expertise.
           </h6>
