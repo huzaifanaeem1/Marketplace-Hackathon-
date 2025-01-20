@@ -35,7 +35,7 @@ const SearchPage = () => {
     };
 
     fetchSearchResults();
-  }, [query]);
+  }, [query, products ]);
 
   if (loading) {
     return (

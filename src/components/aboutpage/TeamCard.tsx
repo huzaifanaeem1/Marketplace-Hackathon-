@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-
+import Image from "next/image";
 const TeamCard = ({
   username,
   profession,
@@ -20,7 +20,7 @@ const TeamCard = ({
     <div className="text-black hover:scale-105 duration-300 transition-all ease-in-out transform">
       <div className="h-full p-6 border-2 border-gray-300 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
         <div className="relative">
-          <img
+          <Image
             className="w-full object-cover object-center rounded-lg"
             src={imgUrl}
             alt={username}

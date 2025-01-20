@@ -73,7 +73,9 @@ const Wishlist = () => {
                 className="border rounded-md p-4 transition-transform duration-200 hover:scale-105"
               >
                 <div className="relative mb-4">
-                  <img
+                  <Image
+                  width={100}
+                  height={100}
                     src={product.image}
                     alt={product.name}
                     className="w-full h-40 object-cover rounded-md"

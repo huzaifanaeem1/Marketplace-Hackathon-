@@ -44,7 +44,7 @@ const ShopPage = () => {
         setLoading(false);
       }
     })();
-  },[]) ;
+  },[setCategories, setProducts]); ;
   const handleFilterChange = (newFilters: FilterState) => {
     let filteredProducts = [...products];
 
