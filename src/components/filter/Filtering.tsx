@@ -20,7 +20,6 @@ const Filtering: React.FC<FilterProps> = ({
   const [showFilterModal, setShowFilterModal] = useState(false);
   const sortRef = useRef<HTMLDivElement>(null);
  
-  // Initialize filters after component mounts
   const [filters, setFilters] = useState<FilterState>(() => ({
     sortBy: "popularity",
     priceRange: {
@@ -29,13 +28,10 @@ const Filtering: React.FC<FilterProps> = ({
     },
     inStock: false,
   }));
-
-  // Handle hydration
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Calculate price range from products after component mounts
   useEffect(() => {
     if (products.length > 0) {
       const prices = products.map((p) => p.price);
@@ -146,7 +142,6 @@ const Filtering: React.FC<FilterProps> = ({
         )}
       </div>
 
-      {/* Filter Button & Modal */}
       <button
         onClick={() => setShowFilterModal(true)}
         className="bg-myHeading rounded-lg px-6 py-3 text-white"

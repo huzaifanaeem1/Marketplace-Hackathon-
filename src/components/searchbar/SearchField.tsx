@@ -14,7 +14,6 @@ const  SearchField = () => {
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
   const searchRef = useRef<HTMLDivElement>(null);
   const { products } = useProducts();
 
