@@ -1,0 +1,10 @@
+CSV-Based Testing Report,,,,,,
+Test Case ID,Description,Expected Result,Actual Result,Status,Severity,Remarks
+TC00 1,Test navigation links,All links navigate correctly,All links function as intended,Pass,Low,None
+TC00 2,Verify product listing display,Products display correctly,Products display correctly,pass,Medium,None
+TC00 3,Test shopping cart functionality,Items add/remove/upd ate correctly,Cart functions as expected,Pass,High,None
+TC00 4,Test wishlist functionality,Items add/remove correctly,Items add/remove correctly,Pass,Medium,None
+TC00 5,Test Filter and SearchBar functionlity,Filter and SearchBar are working ,Filter and SearchBar are working,Pass,Medium,None
+TC00 6,Analyze performance metrics,Performance score ? 90,Score: 80,Fail,High,Optimization needed
+TC00 7,Check accessibility features,Accessibility score ? 90,Score: 100,pass,Medium,Ensure ongoing compliance
+TC00 8,Evaluate SEO metrics,SEO score ? 90,Score: 75,Fail,Medium,Implement recommended SEO practices

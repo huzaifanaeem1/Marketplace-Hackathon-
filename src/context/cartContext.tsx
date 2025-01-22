@@ -97,32 +97,7 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
     paymentMethod: string
   ) => {
     try {
-      // const stockChecks = await Promise.all(
-      //   cartItems.map(async (cartItem) => {
-      //     // Fetch current product stock from Sanity
-      //     const product = await client.fetch<Product>(
-      //       `*[_type == "products" && _id == $productId][0]{
-      //         _id,
-      //         stock
-      //       }`,
-      //       { productId: cartItem._id }
-      //     );
 
-      //     if (!product) {
-      //       throw new Error(Product ${cartItem._id} not found);
-      //     }
-
-      //     if (product.stock < cartItem.cartQuantity) {
-      //       throw new Error(
-      //         Not enough stock for ${cartItem.name}. Available: ${product.stock}, Requested: ${cartItem.cartQuantity}
-      //       );
-      //     }
-
-      //     return true;
-      //   })
-      // );
-
-      // Create customer document
       const customer = await writeClient.create({
         _type: "customer",
         firstName: customerData.firstName,
