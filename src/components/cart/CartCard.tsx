@@ -1,7 +1,8 @@
 "use client";
 
-import { CartItem, useCart } from "@/context/cartContext";
+import { useCart } from "@/context/cartContext";
 import { stringToSlug } from "@/myFunctions/stringToSlug";
+import { CartItem } from "@/types/cartTypes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,7 +13,7 @@ const CartCard = ({ item }: { item: CartItem }) => {
   return (
     <div className="flex gap-3 justify-center items-center py-7 border-b ">
       <Image
-        src={item.image}
+        src={item.image || ""}
         alt="product"
         width={150}
         height={150}
@@ -24,7 +25,7 @@ const CartCard = ({ item }: { item: CartItem }) => {
             href={`/shop/${item.productCategory}/${stringToSlug(
               item.productName
             )}`}
-          > 
+          >
             <h6 className="text-base">{item.productName}</h6>
             <p className="text-[#737373] lg:mt-6  text-[14px] tracking-wide">
               {item.productCategory.toUpperCase()}
@@ -34,7 +35,7 @@ const CartCard = ({ item }: { item: CartItem }) => {
                 Size <span>{item.size}</span>
               </p> */}
               <p>
-                Quantity <span>{item.quantity}</span>
+                Quantity <span>{item.cartQuantity}</span>
               </p>
             </div>
           </Link>
@@ -45,7 +46,7 @@ const CartCard = ({ item }: { item: CartItem }) => {
           </div>
         </div>
         <div className="">
-          <p>${item.price * item.quantity}</p>
+          <p>${item.price * item.cartQuantity}</p>
         </div>
       </div>
     </div>

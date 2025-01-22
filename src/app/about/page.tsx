@@ -9,15 +9,15 @@ const page = () => {
       <AboutHeroSection />
 
       {/* Problems trying */}
-      <div className="flex justify-center items-center gap-12 px-12 sm:px-48 py-16 mt-12 sm:mt-56 md:mt-0 lg:mt-16 flex-col sm:flex-row text-center sm:text-left bg-gradient-to-r from-myGry to-myGry/70 rounded-lg shadow-lg overflow-hidden">
+      <div className="flex justify-center items-center gap-12 px-12 sm:px-48 py-16 mt-12 sm:mt-56 md:mt-0 lg:mt-16 flex-col sm:flex-row text-center sm:text-left rounded-lg  overflow-hidden">
   <div className="max-w-[394px] space-y-6">
-    <span className="text-white font-semibold text-lg tracking-wide">Challenging Concepts</span>
-    <h3 className="text-4xl font-semibold text-white leading-tight">
+    <span className="text-[#272343] font-semibold text-lg tracking-wide">Challenging Concepts</span>
+    <h3 className="text-4xl font-semibold text-[#272343] leading-tight">
       Master the hardest problems with ease and confidence.
     </h3>
   </div>
   <div className="space-y-4">
-    <p className="text-white font-medium opacity-90">
+    <p className="text-myGry font-medium opacity-90">
       Dive into complex topics with step-by-step guidance and hands-on experience. Our solutions are built for success.
     </p>
     <button className="bg-[#272343] text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-myHeading transition duration-300">
@@ -25,17 +25,13 @@ const page = () => {
     </button>
   </div>
 </div>
-
-
       {/* stats */}
       <Stats />
       <Video />
       <OurTeam />
-
       {/* Big Companies */}
-
-    <div className="bg-[#fafafa] py-12">
-      <div className="flex justify-center items-center flex-col text-center text-myHeading mt-12 mb-8">
+    <div className="bg-[#fafafa] pt-6  pb-8 ">
+      <div className="flex justify-center items-center flex-col text-center text-myHeading mt-20 mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">
           Trusted by Big Brands
         </h1>
@@ -67,7 +63,7 @@ const page = () => {
       </div>
 
       {/* Payment Section (Assuming this is your payment method showcase) */}
-      <div className="bg-white p-6 rounded-lg shadow-lg mt-8 text-center">
+      <div className="bg-[#fafafa]p-6 rounded-lg mt-28 text-center">
         <h3 className="text-2xl font-semibold mb-4">Secure and Fast Payment Options</h3>
         <p className="text-myGry text-base mb-6">
           We offer a variety of secure payment methods for a seamless shopping experience.
@@ -82,7 +78,7 @@ const page = () => {
 
     <section className="w-full text-white bg-[#2a7cc7] relative overflow-hidden">
   {/* Background Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#2a7cc7] via-[#4ea8df] to-[#2a7cc7] opacity-80"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-[#272343]  to-[#272343] opacity-80"></div>
 
   <div className="relative flex md:flex-row flex-col items-center justify-center ">
     {/* Text Content */}
@@ -97,7 +93,7 @@ const page = () => {
       </p>
       <button
         type="button"
-        className="bg-gradient-to-r from-white to-gray-200 text-[#2a7cc7] px-8 py-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300"
+        className="bg-white  text-[#272343] px-8 py-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300"
       >
         Get Started
       </button>
@@ -106,11 +102,11 @@ const page = () => {
     {/* Image Section */}
     <div className="hidden md:block animate-slideIn">
       <Image
-        src={"/about/hero2.png"}
+        src={"/about/hero.png"}
         alt="Hero Image"
         width={500}
         height={700}
-        className="rounded-2xl shadow-lg"
+        className="rounded-2xl mr-20"
       />
     </div>
   </div>

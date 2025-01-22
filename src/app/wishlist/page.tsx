@@ -29,8 +29,6 @@
 // };
 
 // export default Wishlist;
-
-
 "use client";
 
 import React from "react";
@@ -45,11 +43,8 @@ const Wishlist = () => {
   return (
     <section className="pt-32">
       <div className="container mx-auto px-8">
-      <div className="flex justify-center items-center flex-col gap-5 mt-12">
-          {/* <h2 className="text-myGry font-semibold text-xl">PRICING</h2> */}
-          <h2 className="text-3xl sm:text-5xl font-bold text-myHeading ">
-            WishList
-          </h2>
+        <div className="flex justify-center items-center flex-col gap-5 mt-12">
+          <h2 className="text-3xl sm:text-5xl font-bold text-myHeading">WishList</h2>
           <div className="flex justify-center items-center gap-4 font-semibold mt-3 pb-12">
             <h3>
               <Link href={"/"}>Home</Link>
@@ -64,40 +59,42 @@ const Wishlist = () => {
               <Link href={"/wishlist"}>wishlist</Link>
             </h3>
           </div>
-          </div>
+        </div>
         {wishlist.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {wishlist.map((product: any, index: any) => (
               <div
                 key={index}
-                className="border rounded-md p-4 transition-transform duration-200 hover:scale-105"
+                className="border rounded-lg p-4 transition-transform duration-200 hover:scale-105 bg-white shadow-md"
               >
-                <div className="relative mb-4">
+                <div className="relative mb-3">
                   <Image
-                  width={100}
-                  height={100}
+                    width={400}
+                    height={400}
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-40 object-cover rounded-md"
-                  />
+                    className="w-full h-64 object-cover rounded-md"
+                  /> 
                   <button
-                    onClick={() => removeFromWishlist(product)} 
+                    onClick={() => removeFromWishlist(product)}
                     className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
                   >
                     <FaTrashAlt className="w-4 h-4" />
                   </button>
                 </div>
-                <h2 className="text-xl font-semibold truncate">{product.name}</h2>
-                <p className="text-sm text-myGry mt-2">{product.description}</p>
+                <h2 className="text-md font-semibold truncate">{product.name}</h2>
+                <p className="text-xs text-myGry mt-1">{product.description}</p>
               </div>
             ))}
           </div>
         ) : (
-          <p>Your wishlist is empty.</p>
+          <p className="text-center text-myGry mt-12">Your wishlist is empty.</p>
+          
         )}
       </div>
+      <hr className="border-t-2 border-myGry my-4 mx-6 mt-20" />
     </section>
   );
 };
 
-export default Wishlist; 
+export default Wishlist;

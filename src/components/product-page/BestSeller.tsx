@@ -25,7 +25,7 @@ const BestSeller = ({ category, name }: { category: string; name: string }) => {
             price={product.price}
             discountPercent={product.discountPercent}
           />
-        ))}
+        ))} 
       </div>
     </div>
   );

@@ -23,6 +23,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-white text-black body-font">
+      
       <div className="container px-5 py-8 mx-auto">
         {/* Footer Header */}
         <div className="w-full flex flex-col sm:flex-row justify-start sm:justify-between items-center mb-20 px-12">
@@ -64,7 +65,7 @@ const Footer = () => {
                     <li key={idx}>
                       <a
                         href="#"
-                        className="hover:text-gray-600 transition-colors duration-300"
+                        className="hover:text-myGry/80 transition-colors duration-300"
                       >
                         {link}
                       </a>
@@ -87,7 +88,7 @@ const Footer = () => {
                   placeholder="Your Email"
                   id="footer-field"
                   name="footer-field"
-                  className="w-full bg-gray-100 bg-opacity-50 font-semibold rounded border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-gray-100 bg-opacity-50 font-semibold rounded border border-gray-300 focus:ring-2 focus:ring-myHeading focus:border-myHeading text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
                 <button className="inline-flex text-white bg-myHeading/95 border-0 py-2 px-6 focus:outline-none hover:bg-myHeading rounded transition-colors duration-300">
                   Subscribe
@@ -100,8 +101,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="mt-12 text-center border-t border-gray-300 pt-4">
+        {/* Copyright Section */} 
+        <div className="mt-8 text-center pt-2">
+        <hr className="border-t-2 border-myGry my-4 mx-6" />
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} Stylezy. All rights reserved. <br />
             Developed by 

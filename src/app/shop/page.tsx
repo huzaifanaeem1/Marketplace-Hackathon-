@@ -10,6 +10,7 @@ import { stringToSlug } from "@/myFunctions/stringToSlug";
 import { client } from "@/sanity/lib/client";
 import Filtering from "@/components/filter/Filtering";
 import { FilterState } from "@/types/filterTypes";
+import { LoaderCircle } from "lucide-react";
 
 const ShopPage = () => {
   const { categories, setCategories } = useCategories();
@@ -97,7 +98,7 @@ const ShopPage = () => {
           </div>
         </div>
         {loading ? (
-          <div className="w-full h-screen text-center mt-40">loading</div>
+          <div className="w-full h-screen flex justify-center items-center mt-40"><LoaderCircle  className="w-12 h-12 text-myHeading"/></div>
         ) : (
           <>
             {/* Shop categories */}

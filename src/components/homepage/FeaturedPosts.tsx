@@ -59,6 +59,7 @@ const FeaturedPosts = () => {
           ))}
         </div>
       </div>
+      <hr className="border-t-2 border-myGry my-10 mx-6" />
     </section>
   );
 };

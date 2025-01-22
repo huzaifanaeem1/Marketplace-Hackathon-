@@ -1,5 +1,6 @@
-import React from "react";
+import React from "react"; 
 import Image from "next/image";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 const HeroSection = () => {
   return (
@@ -17,19 +18,23 @@ const HeroSection = () => {
             We know how large objects will act, <br /> but things on a small
             scale.
           </p>
-          <div className="font-bold">
-            <h3>Phone : +451 215 215</h3>
-            <h3 className="mt-2">Fax : +451 215 215</h3>
-          </div>
-          <div className="flex justify-center items-center gap-5  ">
-            <Image src={"/icons/x-blu.png"} alt="" width={30} height={30} />
-            <Image src={"/icons/fb-blue.png"} alt="" width={30} height={30} />
-            <Image src={"/icons/insta-blu.png"} alt="" width={30} height={30} />
-            <Image src={"/icons/linkedin.png"} alt="" width={30} height={30} />
-          </div>
+          <div className="flex justify-center items-center gap-5">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <FaFacebook size={30} className="hover:text-myHeading text-blue-800 transition-all" />
+      </a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <FaInstagram size={30} className="hover:text-myHeading text-pink-500 transition-all" />
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin size={30} className="hover:text-myHeading text-blue-700 transition-all" />
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <FaTwitter size={30} className="hover:text-myHeading text-blue-500 transition-all" />
+      </a>
+    </div>
         </div>
         <div className="">
-          <Image src={"/contact/hero.png"} alt="" width={700} height={700} />
+          <Image src={"/about/hero1.png"} alt="" width={700} height={700} />
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import TeamCard from "../aboutpage/TeamCard";
 import Link from "next/link";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Team = () => {
   const team = [
@@ -63,7 +65,7 @@ const Team = () => {
   return (
     <section className="flex justify-center items-center flex-col pt-40  text-black bg-white ">
       <div className="w-full mx-auto">
-        {/* Pricing header */}
+
         <div className="flex justify-center items-center flex-col gap-5 mt-12">
           WHAT WE DO{" "}
           <h2 className="text-3xl sm:text-5xl font-bold text-myHeading ">
@@ -102,8 +104,6 @@ const Team = () => {
             <Image src={"/teams/team4.png"} alt="" width={400} height={300} />
           </div>
         </div>
-
-        {/* Meet our Team */}
         <div className="flex justify-center items-center py-16 px-6 sm:px-24 flex-col">
           <h1 className="text-4xl font-bold">Meet Our Team</h1>
           <div className="flex justify-center items-center flex-wrap gap-4 mt-10 sm:mt-16">
@@ -116,39 +116,29 @@ const Team = () => {
             ))}
           </div>
         </div>
-        {/* Trial section */}
-        <div className="my-20">
-          <div className="flex justify-center items-center flex-col gap-4">
-            <h1 className="text-myHeading font-bold text-3xl text-center">
-              Start your 14 days free trial
-            </h1>
-            <p className="md:w-1/3 text-base font-semibold text-myGry text-center">
-              {" "}
-              Met minim Mollie non desert Alamo est sit cliquey dolor do met
-              sent. RELIT official consequent
-            </p>
-            <button className="bg-myBlue px-8 py-4 font-bold rounded-xl text-white">
-              Try it free now
-            </button>
-            <div className="flex justify-center items-center gap-3 mt-5">
-              <Image src={"/icons/x-blu.png"} alt="" width={30} height={30} />
-              <Image src={"/icons/fb-blue.png"} alt="" width={30} height={30} />
-              <Image
-                src={"/icons/insta-blu.png"}
-                alt=""
-                width={30}
-                height={30}
-              />
-              <Image
-                src={"/icons/linkedin.png"}
-                alt=""
-                width={30}
-                height={30}
-              />
-            </div>
-          </div>
+
+    <div className="my-20">
+      <div className="flex justify-center items-center flex-col gap-4">
+        <h1 className="text-myHeading font-bold text-3xl text-center">
+          Start your 14 days free trial
+        </h1>
+        <p className="md:w-1/3 text-base font-semibold text-myGry text-center">
+          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+          RELIT official consequent
+        </p>
+        <button className="bg-myBlue px-8 py-4 font-bold rounded-xl text-white">
+          Try it free now
+        </button>
+        <div className="flex justify-center items-center gap-3 mt-5">
+          <FaTwitter className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
+          <FaFacebook className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
+          <FaInstagram className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
+          <FaLinkedin className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
         </div>
-      </div>{" "}
+      </div>
+    </div>
+    </div>
+  
     </section>
   );
 };

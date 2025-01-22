@@ -23,12 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-white`}>
         <CartItemProvier> 
-          <CategoryProvider>
+          <CategoryProvider>  
             <ProductsProvider>
               <WishlistProvider>
                 <div className="w-full fixed top-0 left-0 z-10">
+                <Navbar />
                 <Header />
-                  <Navbar />
+              
                    
                 </div>
                 {children} 
