@@ -253,7 +253,7 @@ const Navbar = () => {
     </div>
 
     {/* Search Field */}
-    <SearchField onClick={toggleNavbar} />
+    <SearchField />
 
     {/* Cart & Wishlist */}
     <div className="flex gap-4">
