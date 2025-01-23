@@ -1,34 +1,3 @@
-// "use client";
-
-// import React from "react";
-// import { useWishlist } from "@/context/wishlistContext";
- 
-// const Wishlist = () => {
-//   const { wishlist } = useWishlist();
-
-//   return (
-//     <section className="pt-32">
-//       <div className="container mx-auto px-8">
-//         <h1 className="text-3xl font-bold mb-6">Your Wishlist</h1>
-//         {wishlist.length > 0 ? (
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//             {wishlist.map((product:any, index:any) => (
-//               <div key={index} className="border rounded p-4">
-//                 <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4" />
-//                 <h2 className="text-xl font-semibold">{product.name}</h2>
-                
-//               </div>
-//             ))}
-//           </div>
-//         ) : (
-//           <p>Your wishlist is empty.</p>
-//         )}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Wishlist;
 "use client";
 
 import React from "react";

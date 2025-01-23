@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { AiOutlineMail, AiOutlinePhone, AiOutlineEnvironment } from "react-icons/ai"; // React Icons
 
 const OurOffice = () => {
