@@ -6,7 +6,7 @@ const Video = () => {
       <div className="relative w-full h-96">
         {/* Embedded Video */}
         <video controls autoPlay muted className="w-full h-auto rounded-3xl">
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="/ad/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -14,7 +14,7 @@ const Video = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default Video;
  

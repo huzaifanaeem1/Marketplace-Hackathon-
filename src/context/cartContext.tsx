@@ -52,7 +52,7 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
   }, [cartItems]);
 
   const playNotificationSound = () => {
-    const audio = new Audio("/cart-notification.mp3"); // Public folder me rakho
+    const audio = new Audio("/notification/cart-notification.mp3"); // Public folder me rakho
     audio.play();
   };
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { Suspense, use, useEffect, useState } from "react";
 import { CgMenuLeftAlt } from "react-icons/cg";
-import { IoIosArrowDown, IoMdClose } from "react-icons/io";
+import { IoIosArrowDown, IoMdCall, IoMdClose } from "react-icons/io";
 import NavLink from "./NavLink";
 import { useCart } from "@/context/cartContext";
 import { IoMdCart } from "react-icons/io";
@@ -205,12 +205,7 @@ const Navbar = () => {
                 </div>
               )}
               <Link href="/contact" className="flex items-center gap-1">
-                <Image
-                  src={"/icons/call-icon.png"}
-                  alt="call"
-                  width={16}
-                  height={12}
-                />
+              <IoMdCall w-8 h-8 text-white/>
                 <span>Need Help</span>
               </Link>
             </div>
