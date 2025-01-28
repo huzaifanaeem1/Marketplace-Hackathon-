@@ -46,7 +46,7 @@ const ProductPage = ({ params }: { params: { product: string } }) => {
         throw new Error("Error in fetch");
       }
     })();
-  }, []);
+  }, [setCategories, setProducts]);
   const isProductInWishlist = wishlist.some(
     (item: any) => item.slug === productSlug
   );

@@ -164,16 +164,14 @@ const Checkout: React.FC = () => {
         {/* Complete Order Button */}
         <Button
           type="submit"
-          disabled={loading || cartTotal === 0}
-          className="w-full mt-8"
-          children={
-            loading
+          disabled={loading || cartTotal === 0} 
+          className="w-full mt-8">
+            {loading
               ? "Processing..."
               : formData.paymentMethod === "online-payment"
               ? `Pay now $${cartTotal}`
-              : `Place Order -  $${cartTotal}`
-          }
-        />
+              : `Place Order -  $${cartTotal}`}
+          </Button>
       </form>
     </div>
   );

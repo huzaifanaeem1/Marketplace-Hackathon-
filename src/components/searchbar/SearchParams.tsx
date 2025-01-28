@@ -31,9 +31,9 @@ const SearchParams = () => {
         setLoading(false);
       }
     };
-
+ 
     fetchSearchResults();
-  }, [query]);
+  }, [query, products]);
 
   return !loading ? (
     <div className="min-h-screen p-8">
