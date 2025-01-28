@@ -11,6 +11,7 @@ import { client } from "@/sanity/lib/client";
 import Filtering from "@/components/filter/Filtering";
 import { FilterState } from "@/types/filterTypes";
 import { LoaderCircle } from "lucide-react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const ShopPage = () => {
   const { categories, setCategories } = useCategories();
@@ -98,7 +99,7 @@ const ShopPage = () => {
           </div>
         </div>
         {loading ? (
-          <div className="w-full h-screen flex justify-center items-center mt-40"><LoaderCircle  className="w-12 h-12 text-myHeading"/></div>
+          <div className="w-full h-screen flex justify-center items-center mt-40"><AiOutlineLoading3Quarters className="w-12 h-12 animate-spin text-myHeading text-lg" /></div>
         ) : (
           <>
             {/* Shop categories */}
@@ -109,7 +110,7 @@ const ShopPage = () => {
                   category={category.name.toUpperCase()}
                   itemCount={category.productsCount}
                   imgUrl={category.image}
-                />
+                /> 
               ))}
             </div>
             {/* filtered area */}
@@ -125,7 +126,7 @@ const ShopPage = () => {
                 />  
                 <Image
                   src={"/icons/view2.png"}
-                  alt="view"
+                  alt="view" 
                   width={14}
                   height={14}
                 />

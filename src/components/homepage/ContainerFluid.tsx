@@ -18,7 +18,7 @@ const ContainerFluid = () => {
         </div>
         <div className="flex justify-center items-center md:items-start flex-col gap-5 text-center md:text-left">
           <h3 className="font-semibold text-myGry text-base sm:text-lg">
-            SUMMER 2020
+            SUMMER 2025
           </h3>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold title-font text-[#272343]">
             Part of the Neutral <br /> Universe

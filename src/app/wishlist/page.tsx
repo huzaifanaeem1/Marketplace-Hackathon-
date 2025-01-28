@@ -2,12 +2,12 @@
 
 import React from "react";
 import { useWishlist } from "@/context/wishlistContext";
-import { FaTrashAlt } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import WishListCard from "@/components/wishlist/WishListCard";
 
 const Wishlist = () => {
-  const { wishlist, removeFromWishlist } = useWishlist();
+  const { wishlist, } = useWishlist();
 
   return (
     <section className="pt-32">
@@ -31,29 +31,8 @@ const Wishlist = () => {
         </div>
         {wishlist.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {wishlist.map((product: any, index: any) => (
-              <div
-                key={index}
-                className="border rounded-lg p-4 transition-transform duration-200 hover:scale-105 bg-white shadow-md"
-              >
-                <div className="relative mb-3">
-                  <Image
-                    width={400}
-                    height={400}
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover rounded-md"
-                  /> 
-                  <button
-                    onClick={() => removeFromWishlist(product)}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
-                  >
-                    <FaTrashAlt className="w-4 h-4" />
-                  </button>
-                </div>
-                <h2 className="text-md font-semibold truncate">{product.name}</h2>
-                <p className="text-xs text-myGry mt-1">{product.description}</p>
-              </div>
+            {wishlist.map((product: any) => (
+              <WishListCard product={product} key={product.id} />
             ))}
           </div>
         ) : (

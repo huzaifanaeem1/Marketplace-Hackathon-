@@ -4,56 +4,48 @@ import { useRouter } from "next/navigation";
 import { InputField } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/context/cartContext";
-import { CustomerData } from "@/types/customerType";
-
-interface FormData extends CustomerData {
-  email: string;
-}
+import { useForm } from "@/context/formDataContext";
 
 const Checkout: React.FC = () => {
   const router = useRouter();
   const { submitOrder, cartTotal } = useCart();
-  const [billingSameAsShipping, setBillingSameAsShipping] = useState<boolean>(
-    true
-  );
+  // const [billingSameAsShipping, setBillingSameAsShipping] = useState<boolean>(
+  //   true
+  // );
   const [loading, setLoading] = useState<boolean>(false);
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    firstName: "",
-    lastName: "",
-    address: "",
-    apartment: "",
-    city: "",
-    postalCode: "",
-    phone: "",
-    paymentMethod: "cod",
-  });
+  const { formData, setFormData } = useForm();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }));
+    })); 
   };
-
+ 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setLoading(true);
-
-    try {
-      const result = await submitOrder(formData, formData.paymentMethod);
-
-      if (result.success && result.orderId) {
-        router.push(`/order-confirmation/${result.orderId}`);
-      } else {
-        throw new Error(result.error || "Order submission failed");
-      }
-    } catch (error) {
-      console.error("Error processing order:", error);
-      alert("There was an error processing your order. Please try again.");
-    } finally {
+    if (formData.paymentMethod === "online-payment") {
+      router.push(`/payment`);
       setLoading(false);
+    } else {
+      try {
+        const result = await submitOrder(formData, formData.paymentMethod);
+
+        if (result.success && result.orderId) {
+          router.push(`/order-confirmation/${result.orderId}`);
+          localStorage.removeItem("formData");
+        } else {
+          throw new Error(result.error || "Order submission failed");
+        }
+      } catch (error) {
+        console.error("Error processing order:", error);
+        alert("There was an error processing your order. Please try again.");
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -94,9 +86,8 @@ const Checkout: React.FC = () => {
               label="Last Name"
               type="text"
               name="lastName"
-              value={formData.lastName}
+              value={formData.lastName || ""}
               onChange={handleInputChange}
-              required
             />
           </div>
           <InputField
@@ -160,27 +151,32 @@ const Checkout: React.FC = () => {
           <div className="flex items-center space-x-2">
             <input
               type="radio"
-              id="bank-transfer"
+              id="online-payment"
               name="paymentMethod"
-              value="bank-transfer"
-              checked={formData.paymentMethod === "bank-transfer"}
+              value="online-payment"
+              checked={formData.paymentMethod === "online-payment"}
               onChange={handleInputChange}
             />
-            <label htmlFor="bank-transfer">Bank Transfer</label>
+            <label htmlFor="online-payment">Online Payment</label>
           </div>
         </div>
 
         {/* Complete Order Button */}
         <Button
           type="submit"
-          disabled={loading}
+          disabled={loading || cartTotal === 0}
           className="w-full mt-8"
-          label={loading ? "Processing..." : `Place Order -  $${cartTotal}`}
+          children={
+            loading
+              ? "Processing..."
+              : formData.paymentMethod === "online-payment"
+              ? `Pay now $${cartTotal}`
+              : `Place Order -  $${cartTotal}`
+          }
         />
       </form>
-      
     </div>
   );
-};
+}; 
 
 export default Checkout;

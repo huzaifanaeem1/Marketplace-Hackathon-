@@ -7,7 +7,7 @@ const HeroSection = () => {
       className="w-full bg-cover bg-center h-screen body-font text-[#272343] relative"
       style={{ backgroundImage: 'url("/home/home-bg.jpg")' }}
     >
-      <div className="absolute inset-0 bg-black opacity-50 z-0" /> {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-black opacity-30 z-0" /> {/* Semi-transparent overlay */}
       <div className="container mx-auto flex justify-center items-center h-full relative">
         <div className="text-center flex flex-col items-center gap-6">
           <h3 className="font-semibold text-white text-xl sm:text-2xl">SUMMER 2025</h3>

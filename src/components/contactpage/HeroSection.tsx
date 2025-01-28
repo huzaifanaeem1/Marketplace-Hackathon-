@@ -10,7 +10,7 @@ const HeroSection = () => {
     >
       <div className="container mx-auto flex px-12  lg:px-24 py-24 md:flex-row flex-col items-center justify-center">
         <div className="lg:flex-grow md:w-1/2 md:pl-16 flex flex-col md:items-start md:text-left mb-16 sm:mb-0 items-center text-center gap-6">
-          <h3 className="font-semibold">CONTACT US</h3>
+          <h3 className="font-semibold pt-8">CONTACT US</h3>
           <h1 className="title-font text-4xl sm:text-5xl font-bold mt-2 ">
             Get in touch <br /> today
           </h1>

@@ -22,8 +22,8 @@ import ContactHeroSection from "./contactpage/HeroSection";
 import OurOffice from "./contactpage/OurOffice";
 import LetsTalk from "./contactpage/LetsTalk";
 import HeroSection2 from "./homepage/HeroSection2";
-import LoginPage from "@/app/(auth)/login/page";
-import SignUpPage from "@/app/(auth)/signup/page";
+// import LoginPage from "@/app/(auth)/login/page";
+// import SignUpPage from "@/app/(auth)/signup/page";
 import SearchField from "./searchbar/SearchField";
 import Filtering from "./filter/Filtering";
 
@@ -53,8 +53,8 @@ export {
   ContactHeroSection,
   OurOffice,
   LetsTalk,
- LoginPage,
- SignUpPage,
+//  LoginPage,
+//  SignUpPage,
  SearchField,
  Filtering
 };

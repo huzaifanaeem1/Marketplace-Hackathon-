@@ -6,6 +6,7 @@ import { useCart } from "@/context/cartContext";
 import CartCard from "@/components/cart/CartCard";
 import { CartItem } from "@/types/cartTypes";
 
+
 export default function CheckoutPage() {
   const { cartItems, cartTotal } = useCart();
   return (
@@ -31,7 +32,7 @@ export default function CheckoutPage() {
             </h3>
             <Image
               src={"/icons/left-icon.png"}
-              alt="left" 
+              alt="left"
               width={8.62}
               height={16}
             />
@@ -42,16 +43,16 @@ export default function CheckoutPage() {
         </div>
         {/* Responsive layout */}
         <div className="flex flex-col-reverse lg:flex-row justify-center items-start gap-6 mt-20">
-        <div className="">
+          <div className="">
             <Checkout />
           </div>
-           {/* Checkout Form */}
+          {/* Checkout Form */}
           {/* Summary Section */}
           <div className="">
             <div>
               {cartItems.map((item: CartItem) => (
-                <CartCard key={item._id} item={item} />
-              ))}
+                <CartCard key={item._id} item={item} isCheckout={true} />
+              ))} 
             </div>
             <div>
               {cartItems && (
@@ -74,12 +75,9 @@ export default function CheckoutPage() {
               )}
             </div>
           </div>
-
-         
         </div>
         <hr className="border-t-2 border-myGry my-6 mx-6" />
       </div>
-      
     </section>
   );
 }

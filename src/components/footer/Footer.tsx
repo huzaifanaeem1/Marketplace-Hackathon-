@@ -1,18 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
 
 const Footer = () => {
-  const socialLinks = [
+  const socialLinks = [ 
     {
       id: 1,
       icon: <FiFacebook />,
-      url: "https://www.facebook.com",
+      url: "https://www.facebook.com/profile.php?id=100084760552740",
     },
     {
       id: 2,
       icon: <FiInstagram />,
-      url: "https://www.instagram.com",
+      url: "https://www.instagram.com/__.zefa.__?igsh=a2J4a3dvcWF2Njg5",
     },
     {
       id: 3,
@@ -28,7 +29,7 @@ const Footer = () => {
         {/* Footer Header */}
         <div className="w-full flex flex-col sm:flex-row justify-start sm:justify-between items-center mb-20 px-12">
           <Link href="/" className="text-3xl font-bold hover:text-gray-600 transition-colors duration-300">
-            Stylezy
+            <Image src={"/home/stylezy-blue.png"} alt={"Stylezy-Logo"} width={120} height={100} />
           </Link>
 
           {/* Social Links */}

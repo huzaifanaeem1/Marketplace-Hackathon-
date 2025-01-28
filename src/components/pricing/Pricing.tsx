@@ -48,13 +48,19 @@ const Pricing = () => {
     <section className="flex flex-col items-center pt-20 bg-gray-50 text-[#272343] ">
       {/* Header */}
       <div className="text-center mt-20 mb-10">
-        <h2 className="text-xl font-semibold text-gray-500">PRICING</h2>
-        <h1 className="text-4xl font-bold text-[#272343]">Simple Pricing</h1>
-        <div className="mt-4">
-          <Link href="/">Home</Link> / <Link href="/pricing">Pricing</Link>
-        </div>
+        <h2 className="text-xl font-semibold text-myGry">PRICING</h2>
+        <h1 className="text-4xl font-semibold text-myHeading">Simple Pricing</h1>
+        <div className="flex justify-center items-center gap-4 font-semibold mt-3 pb-12">
+            <h3>
+              <Link href={"/"}>Home</Link>
+            </h3>
+            /
+            <h3 className="text-myGry">
+              <Link href={"/team"}>Pricing</Link>
+            </h3>
+          </div>
       </div>
-
+ 
       {/* Pricing Toggle */}
       <div className="flex items-center gap-4 my-6">
         <span className="font-semibold">Monthly</span>
@@ -69,7 +75,7 @@ const Pricing = () => {
           />
         </div>
         <span className="font-semibold">Yearly</span>
-      </div>
+      </div> 
 
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-6">
@@ -90,9 +96,11 @@ const Pricing = () => {
         <p className="text-gray-500 mt-2">
           No credit card required. Cancel anytime.
         </p>
+        <a href="/contact">
         <button className="mt-4 px-8 py-4 bg-[#272343]  text-white font-bold rounded-lg shadow transition-transform  hover:scale-105">
           Try for Free
         </button>
+        </a>
       </div>
     </section>
   );

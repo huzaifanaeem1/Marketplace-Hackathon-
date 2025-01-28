@@ -1,9 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Add in your CSS file if not using Tailwind */
-.container {
-    max-width: 1400px;
-  }
   

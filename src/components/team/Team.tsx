@@ -55,19 +55,13 @@ const Team = () => {
       profession: "profession",
       imgUrl: "/about/user-8.jpg",
     },
-    {
-      id: 9,
-      username: "username",
-      profession: "profession",
-      imgUrl: "/about/user-9.jpg",
-    },
   ];
   return (
     <section className="flex justify-center items-center flex-col pt-40  text-black bg-white ">
       <div className="w-full mx-auto">
 
         <div className="flex justify-center items-center flex-col gap-5 mt-12">
-          WHAT WE DO{" "}
+        <h2 className="text-xl font-semibold text-myGry">What we do</h2>
           <h2 className="text-3xl sm:text-5xl font-bold text-myHeading ">
             Innovation tailored for you
           </h2>
@@ -75,12 +69,7 @@ const Team = () => {
             <h3>
               <Link href={"/"}>Home</Link>
             </h3>
-            <Image
-              src={"/icons/left-icon.png"}
-              alt="left"
-              width={8.62}
-              height={16}
-            />
+            /
             <h3 className="text-myGry">
               <Link href={"/team"}>Team</Link>
             </h3>
@@ -117,30 +106,22 @@ const Team = () => {
           </div>
         </div>
 
-    <div className="my-20">
-      <div className="flex justify-center items-center flex-col gap-4">
-        <h1 className="text-myHeading font-bold text-3xl text-center">
-          Start your 14 days free trial
-        </h1>
-        <p className="md:w-1/3 text-base font-semibold text-myGry text-center">
-          Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-          RELIT official consequent
+        <div className="mt-12 text-center mb-10">
+        <h2 className="text-2xl font-bold">Start your 14-day free trial</h2>
+        <p className="text-gray-500 mt-2">
+          No credit card required. Cancel anytime.
         </p>
-        <button className="bg-myBlue px-8 py-4 font-bold rounded-xl text-white">
-          Try it free now
+        <a href="/contact">
+        <button className="mt-4 px-8 py-4 bg-[#272343]  text-white font-bold rounded-lg shadow transition-transform  hover:scale-105">
+          Try for Free
         </button>
-        <div className="flex justify-center items-center gap-3 mt-5">
-          <FaTwitter className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
-          <FaFacebook className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
-          <FaInstagram className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
-          <FaLinkedin className="text-myBlue text-2xl cursor-pointer hover:scale-110 duration-200" />
-        </div>
+        </a>
       </div>
     </div>
-    </div>
-  
+    <hr className="border-t-2 border-myGry my-8 mx-6" />
     </section>
   );
 };
 
 export default Team;
+ 

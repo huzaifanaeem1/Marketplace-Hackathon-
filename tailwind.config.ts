@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        myHeading: "#252B42",
+        myHeading: "#272343",
         myGry: "#737373",
         myBlue: "#23A6F0",
       },
@@ -23,4 +23,4 @@ const config: Config = {
   },
   plugins: [],
 };
-export default config;
+export default config; 

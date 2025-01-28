@@ -7,21 +7,24 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Product } from "./productsContext";
-import { CartItem } from "@/types/cartTypes";
-import { CustomerData } from "@/types/customerType";
+import { Product } from "@/types/productType";
 import { writeClient } from "@/sanity/lib/writeClient";
-import { order } from "@/sanity/schemaTypes/order";
 import { discountedPrice } from "@/myFunctions/discountedPrice";
-
+import {
+  showAddToCartToast,
+  showErrorToast,
+} from "@/components/toast/ToastNotification"
+import { CartItem } from "@/types/cartTypes";
+import { FormData } from "@/types/formData";
 
 interface CartItemType {
   cartItems: CartItem[];
   handleCart: (product: Product) => void;
   handleDelete: (id: string) => void;
+  updateQuantity: (id: string, newQuantity: number) => void;
   cartTotal: number;
   submitOrder: (
-    customerData: CustomerData,
+    formData: FormData,
     paymentMethod: string
   ) => Promise<{ success: boolean; orderId?: string; error?: string }>;
   clearCart: () => void;
@@ -48,42 +51,53 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const handleCart = (product: Product) => {
-    const existingItem = cartItems.find((item) => item._id === product._id);
+  const playNotificationSound = () => {
+    const audio = new Audio("/cart-notification.mp3"); // Public folder me rakho
+    audio.play();
+  };
 
-    if (existingItem) {
-      // If item exists, increase quantity
-      setCartItems(
-        cartItems.map((item) =>
-          item._id === product._id
-            ? { ...item, cartQuantity: item.cartQuantity + 1 }
-            : item
-        )
-      );
-    } else {
-      // If item doesn't exist, add new item with quantity 1
-      const cartItem: CartItem = {
-        _id: product._id,
-        productName: product.name,
-        productCategory: product.category,
-        price: discountedPrice(product.price, product.discountPercent),
-        image: product.image,
-        cartQuantity: 1,
-        name: "",
-      };
-      setCartItems([...cartItems, cartItem]);
+  const handleCart = (product: Product) => {
+    try {
+      const existingItem = cartItems.find((item) => item._id === product._id);
+
+      if (existingItem) {
+        // If item exists, increase quantity
+        setCartItems(
+          cartItems.map((item) =>
+            item._id === product._id
+              ? { ...item, cartQuantity: item.cartQuantity + 1 }
+              : item
+          )
+        );
+      } else {
+        // If item doesn't exist, add new item with quantity 1
+        const cartItem: CartItem = {
+          _id: product._id,
+          productName: product.name,
+          productCategory: product.category,
+          price: discountedPrice(product.price, product.discountPercent),
+          image: product.image,
+          cartQuantity: 1,
+          name: "",
+        };
+        setCartItems([...cartItems, cartItem]);
+      }
+      showAddToCartToast(product.name);
+      playNotificationSound();
+    } catch (error) {
+      showErrorToast("Failed to add product to cart");
     }
   };
 
   const handleDelete = (id: string) => {
+    setCartItems((prevCart) => prevCart.filter((item) => item._id !== id));
+  };
+
+  const updateQuantity = (id: string, newQuantity: number) => {
     setCartItems((prevCart) =>
-      prevCart
-        .map((item) =>
-          item._id === id
-            ? { ...item, cartQuantity: item.cartQuantity - 1 }
-            : item
-        )
-        .filter((item) => item.cartQuantity > 0)
+      prevCart.map((item) =>
+        item._id === id ? { ...item, cartQuantity: newQuantity } : item
+      )
     );
   };
 
@@ -92,30 +106,52 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
     setCartTotal(0);
   };
 
-  const submitOrder = async (
-    customerData: CustomerData,
-    paymentMethod: string
-  ) => {
+  const submitOrder = async (formData: FormData, paymentMethod: string) => {
     try {
+      // const stockChecks = await Promise.all(
+      //   cartItems.map(async (cartItem) => {
+      //     // Fetch current product stock from Sanity
+      //     const product = await client.fetch<Product>(
+      //       `*[_type == "products" && _id == $productId][0]{
+      //         _id,
+      //         stock
+      //       }`,
+      //       { productId: cartItem._id }
+      //     );
 
+      //     if (!product) {
+      //       throw new Error(Product ${cartItem._id} not found);
+      //     }
+
+      //     if (product.stock < cartItem.cartQuantity) {
+      //       throw new Error(
+      //         Not enough stock for ${cartItem.name}. Available: ${product.stock}, Requested: ${cartItem.cartQuantity}
+      //       );
+      //     }
+
+      //     return true;
+      //   })
+      // );
+
+      // Create customer document
       const customer = await writeClient.create({
         _type: "customer",
-        firstName: customerData.firstName,
-        lastName: customerData.lastName,
-        email: customerData.email,
-        phone: customerData.phone,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
         address: {
-          street: customerData.address,
-          apartment: customerData.apartment,
-          city: customerData.city,
-          postalCode: customerData.postalCode,
+          street: formData.address,
+          apartment: formData.apartment,
+          city: formData.city,
+          postalCode: formData.postalCode,
         },
       });
 
       // Create order document
       const order = await writeClient.create({
         _type: "order",
-        orderNumber:` ORD-${Date.now()}`,
+        orderNumber: ` ORD-${Date.now()}`,
         customer: {
           _type: "reference",
           _ref: customer._id,
@@ -162,6 +198,7 @@ export const CartItemProvier = ({ children }: { children: ReactNode }) => {
     cartItems,
     handleCart,
     handleDelete,
+    updateQuantity,
     cartTotal,
     submitOrder,
     clearCart,

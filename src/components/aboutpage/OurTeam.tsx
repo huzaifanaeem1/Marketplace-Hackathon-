@@ -32,8 +32,8 @@ const OurTeam = () => {
   ];
   return (
     <section>
-      <div className="flex justify-center items-center flex-col px-12 py-16">
-        <div className="flex justify-center items-center flex-col text-center text-myHeading mb-8">
+      <div className="flex justify-center items-center flex-col px-12 sm:pt-44">
+        <div className="flex justify-center items-center flex-col text-center text-myHeading mb-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h1>
           <h6 className="text-myGry text-sm md:text-base font-semibold mb-2">
   We&apos;re a group of passionate professionals dedicated to delivering the best.
@@ -45,7 +45,7 @@ const OurTeam = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {team.map((user) => (
-            <TeamCard
+            <TeamCard 
               key={user.id}
               username={user.username}
               profession={user.profession}

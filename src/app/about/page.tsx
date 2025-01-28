@@ -11,8 +11,8 @@ const page = () => {
       {/* Problems trying */}
       <div className="flex justify-center items-center gap-12 px-12 sm:px-48 py-16 mt-12 sm:mt-56 md:mt-0 lg:mt-16 flex-col sm:flex-row text-center sm:text-left rounded-lg  overflow-hidden">
   <div className="max-w-[394px] space-y-6">
-    <span className="text-[#272343] font-semibold text-lg tracking-wide">Challenging Concepts</span>
-    <h3 className="text-4xl font-semibold text-[#272343] leading-tight">
+    <span className="text-myHeading font-semibold text-lg tracking-wide ">Challenging Concepts</span>
+    <h3 className="text-4xl font-semibold text-myHeading leading-tight ">
       Master the hardest problems with ease and confidence.
     </h3>
   </div>
@@ -20,7 +20,7 @@ const page = () => {
     <p className="text-myGry font-medium opacity-90">
       Dive into complex topics with step-by-step guidance and hands-on experience. Our solutions are built for success.
     </p>
-    <button className="bg-[#272343] text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-myHeading transition duration-300">
+    <button className="bg-myHeading text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-myHeading transition duration-300">
       Start Learning Now
     </button>
   </div>
@@ -30,7 +30,7 @@ const page = () => {
       <Video />
       <OurTeam />
       {/* Big Companies */}
-    <div className="bg-[#fafafa] pt-6  pb-8 ">
+    <div className="bg-[#fafafa] mt-32 pt-8  pb-8 ">
       <div className="flex justify-center items-center flex-col text-center text-myHeading mt-20 mb-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">
           Trusted by Big Brands
@@ -78,7 +78,7 @@ const page = () => {
 
     <section className="w-full text-white bg-[#2a7cc7] relative overflow-hidden">
   {/* Background Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#272343]  to-[#272343] opacity-80"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-myHeading  to-myHeading opacity-80"></div>
 
   <div className="relative flex md:flex-row flex-col items-center justify-center ">
     {/* Text Content */}
@@ -93,7 +93,7 @@ const page = () => {
       </p>
       <button
         type="button"
-        className="bg-white  text-[#272343] px-8 py-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300"
+        className="bg-white  text-myHeading px-8 py-3 rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300"
       >
         Get Started
       </button>
