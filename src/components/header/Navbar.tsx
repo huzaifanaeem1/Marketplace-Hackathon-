@@ -54,7 +54,7 @@ const Navbar = () => {
           href="/"
           className="text-xl lg:text-3xl font-bold flex items-center gap-2 text-white"
         >
-          <Image src={"/home/stylezy-white.png"} alt={"Stylezy-Logo"} width={120} height={100} />
+          <Image src={"/home/stylezy-white.png"} alt={"Stylezy-Logo"} width={100} height={100} />
         </Link>
 
         {/* Large Screen Navigation */}

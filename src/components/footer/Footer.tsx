@@ -29,7 +29,7 @@ const Footer = () => {
         {/* Footer Header */}
         <div className="w-full flex flex-col sm:flex-row justify-start sm:justify-between items-center mb-20 px-12">
           <Link href="/" className="text-3xl font-bold hover:text-gray-600 transition-colors duration-300">
-            <Image src={"/home/stylezy-blue.png"} alt={"Stylezy-Logo"} width={120} height={100} />
+            <Image src={"/home/stylezy-blue.png"} alt={"Stylezy-Logo"} width={100} height={100} />
           </Link>
 
           {/* Social Links */}

@@ -21,7 +21,7 @@ const EditorsPick = () => {
                 </h1>
               </div>
               <Image
-                src="/editors-pick/one.avif"
+                src="/editors-pick/one.jpg"
                 alt="Men"
                 width={500}
                 height={500}
