@@ -114,7 +114,7 @@ const Checkout = () => {
             label="Apartment, suite, etc. (optional)"
             type="text"
             name="apartment"
-            value={formData.apartment || ""}
+            value={formData?.apartment || ""}
             onChange={handleInputChange}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
