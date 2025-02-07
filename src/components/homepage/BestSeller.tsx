@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard";
 import { Product } from "@/context/productsContext";
 
 const BestSeller = ({ products }: { products: Product[] }) => {
-  const filteredProducts = products.filter((product) => product.isNew);
+  const filteredProducts = products.filter((product) => product.bestSelling);
   return ( 
     <section className="mt-20 ">
       <div className="container px-0 sm:px-5 py-20 mx-auto ">

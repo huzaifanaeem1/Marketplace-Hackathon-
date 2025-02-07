@@ -1,4 +1,4 @@
-const categorySchema = {
+export const category = {
   name: "category",
   type: "document",
   title: "Categories",
@@ -11,7 +11,7 @@ const categorySchema = {
     {
       name: "description",
       type: "string",
-      title: "Description",
+      title: "Description", 
     },
     {
       name: "productsCount",
@@ -23,6 +23,7 @@ const categorySchema = {
       type: "string",
       title: "Parent Category",
     },
+
     {
       name: "tags",
       type: "array",
@@ -32,6 +33,7 @@ const categorySchema = {
         layout: "tags",
       },
     },
+
     {
       name: "image",
       type: "image",
@@ -42,5 +44,3 @@ const categorySchema = {
     },
   ],
 };
-
-export default categorySchema;

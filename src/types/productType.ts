@@ -6,11 +6,10 @@ export interface Product {
     category: string;
     price: number;
     discountPercent: number;
-    colors?: string[];
     image: string;
     sizes: string[];
-    isNew: boolean;
-    tags: string[];
+    colors?: string[];
+    bestSelling: boolean;
     stock: number;
     _createdAt: string;
   }

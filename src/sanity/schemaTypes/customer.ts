@@ -6,6 +6,11 @@ export const customer = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "clerkId",
+      title: "Clerk ID",
+      type: "string",
+    }),
+    defineField({
       name: "firstName",
       title: "First Name",
       type: "string",
@@ -27,6 +32,7 @@ export const customer = defineType({
       name: "phone",
       title: "Phone",
       type: "string",
+      validation: (Rule) => Rule.required().email(),
     }),
     defineField({
       name: "address",
@@ -56,4 +62,4 @@ export const customer = defineType({
       ],
     }),
   ],
-});
+})
