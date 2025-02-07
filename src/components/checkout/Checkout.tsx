@@ -181,7 +181,7 @@ const Checkout = () => {
         >
           {loading
             ? "Processing..."
-            : formData.paymentMethod === "online-payment"
+            : formData?.paymentMethod === "online-payment"
             ? `Pay now $${cartTotal}`
             : `Place Order -  $${cartTotal}`}
         </Button>
