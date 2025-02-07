@@ -1,4 +1,5 @@
-import { Product, useProducts } from "@/context/productsContext";
+import { useProducts } from "@/context/productsContext";
+import { Product } from "@/types/productType";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
@@ -16,13 +17,12 @@ const SearchParams = () => {
     const fetchSearchResults = async (): Promise<void> => {
       setLoading(true);
       try {
-        const results = products?.filter(
-          (product) =>
-            product.name.toLowerCase().includes(query.toLowerCase()) ||
-            product.tags.some((tag) =>
-              tag.toLowerCase().includes(query.toLowerCase())
-            )
+        const results = products?.filter((product) =>
+          product.name.toLowerCase().includes(query.toLowerCase())
         );
+        // product.tags.some((tag) =>
+        //   tag.toLowerCase().includes(query.toLowerCase())
+        // )
 
         setSearchResults(results || []);
       } catch (error) {
@@ -31,14 +31,14 @@ const SearchParams = () => {
         setLoading(false);
       }
     };
- 
+
     fetchSearchResults();
   }, [query, products]);
 
   return !loading ? (
     <div className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6"> 
+        <h1 className="text-2xl font-bold mb-6">
           Search Results for &quot;{query}&quot;
         </h1>
 
