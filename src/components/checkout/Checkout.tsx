@@ -5,24 +5,23 @@ import { InputField } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/context/cartContext";
 import { useForm } from "@/context/formDataContext";
+import { useAuth } from "@clerk/nextjs";
 
-const Checkout: React.FC = () => {
+const Checkout = () => {
   const router = useRouter();
   const { submitOrder, cartTotal } = useCart();
-  // const [billingSameAsShipping, setBillingSameAsShipping] = useState<boolean>(
-  //   true
-  // );
   const [loading, setLoading] = useState<boolean>(false);
   const { formData, setFormData } = useForm();
+  const { userId } = useAuth();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    })); 
+    }));
   };
- 
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -32,7 +31,15 @@ const Checkout: React.FC = () => {
       setLoading(false);
     } else {
       try {
-        const result = await submitOrder(formData, formData.paymentMethod);
+        if (!userId) {
+          throw new Error("User ID is missing");
+        }
+        console.log(userId);
+        const result = await submitOrder(
+          formData,
+          formData.paymentMethod,
+          userId
+        );
 
         if (result.success && result.orderId) {
           router.push(`/order-confirmation/${result.orderId}`);
@@ -63,7 +70,7 @@ const Checkout: React.FC = () => {
           label="Email"
           type="email"
           name="email"
-          value={formData.email}
+          value={formData.email || ""}
           onChange={handleInputChange}
           required
         />
@@ -164,17 +171,18 @@ const Checkout: React.FC = () => {
         {/* Complete Order Button */}
         <Button
           type="submit"
-          disabled={loading || cartTotal === 0} 
-          className="w-full mt-8">
-            {loading
-              ? "Processing..."
-              : formData.paymentMethod === "online-payment"
-              ? `Pay now $${cartTotal}`
-              : `Place Order -  $${cartTotal}`}
-          </Button>
+          disabled={loading || cartTotal === 0}
+          className="w-full mt-8"
+        >
+          {loading
+            ? "Processing..."
+            : formData.paymentMethod === "online-payment"
+            ? `Pay now $${cartTotal}`
+            : `Place Order -  $${cartTotal}`}
+        </Button>
       </form>
     </div>
   );
-}; 
+};
 
 export default Checkout;

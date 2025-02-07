@@ -38,7 +38,7 @@ const ProductCard = ({
         </div>
         <div className="flex justify-center items-center flex-col gap-3 mt-3 font-semibold">
           <h3 className="">{name}</h3>
-          <h4 className="text-[#737373]">{category.toUpperCase()}</h4>
+          <h4 className="text-[#737373]">{category.toUpperCase()}</h4> 
           <div className="flex gap-2">
             <span className="text-[#bdbdbd] line-through">{price}</span>
             <span className="text-[#23856D]">
