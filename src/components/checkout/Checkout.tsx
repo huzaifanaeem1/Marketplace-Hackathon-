@@ -106,7 +106,7 @@ const Checkout = () => {
             label="Address"
             type="text"
             name="address"
-            value={formData.address}
+            value={formData?.address || ""}
             onChange={handleInputChange}
             required
           />
@@ -122,7 +122,7 @@ const Checkout = () => {
               label="City"
               type="text"
               name="city"
-              value={formData.city}
+              value={formData?.city || ""}
               onChange={handleInputChange}
               required
             />
@@ -130,7 +130,7 @@ const Checkout = () => {
               label="Postal Code"
               type="text"
               name="postalCode"
-              value={formData.postalCode || ""}
+              value={formData?.postalCode || ""}
               onChange={handleInputChange}
             />
           </div>
@@ -138,7 +138,7 @@ const Checkout = () => {
             label="Phone"
             type="tel"
             name="phone"
-            value={formData.phone}
+            value={formData?.phone || ""}
             onChange={handleInputChange}
             required
           />
