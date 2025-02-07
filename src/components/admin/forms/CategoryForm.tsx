@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { writeClient } from "@/sanity/lib/writeClient";
 
@@ -208,7 +209,7 @@ export default function CategoryForm({ initialData }: CategoryFormProps) {
           {/* Image preview */}
           {(imagePreview || formData.image?.asset?._ref) && (
             <div className="relative w-32 h-32">
-              <img
+              <Image
                 src={
                   imagePreview ||
                   (formData.image?.asset?._ref

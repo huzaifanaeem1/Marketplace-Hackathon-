@@ -11,7 +11,9 @@ const Checkout = () => {
   const router = useRouter();
   const { submitOrder, cartTotal } = useCart();
   const [loading, setLoading] = useState<boolean>(false);
-  const { formData, setFormData } = useForm();
+  // const { formData, setFormData } = useForm();
+  const { formData, setFormData } = useForm() ?? { formData: {}, setFormData: () => {} };
+
   const { userId } = useAuth();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

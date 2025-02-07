@@ -1,6 +1,7 @@
 "use client"; // Convert to Client Component
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { deleteEntity } from "@/sanity/lib/deleteEntity";
 import Link from "next/link";
@@ -71,7 +72,7 @@ export default function ProductsPage() {
       <div className="flex flex-col gap-6">
         {filteredProducts.map((product) => (
           <div key={product._id} className="bg-white p-6 rounded-lg shadow flex items-center">
-            <img
+            <Image
               src={product.image}
               alt={product.name}
               className="w-20 h-20 rounded-full object-cover mr-6 border border-gray-300"

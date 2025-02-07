@@ -48,7 +48,7 @@ export default function CheckoutPage() {
           </div>
           {/* Checkout Form */}
           {/* Summary Section */}
-          <div className="">
+          <div>
             <div>
               {cartItems.map((item: CartItem) => (
                 <CartCard key={item._id} item={item} isCheckout={true} />
