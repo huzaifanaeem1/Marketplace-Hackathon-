@@ -155,7 +155,7 @@ const Checkout = () => {
               id="cod"
               name="paymentMethod"
               value="cod"
-              checked={formData.paymentMethod === "cod"}
+              checked={formData?.paymentMethod === "cod"}
               onChange={handleInputChange}
             />
             <label htmlFor="cod">Cash on Delivery (COD)</label>
@@ -166,7 +166,7 @@ const Checkout = () => {
               id="online-payment"
               name="paymentMethod"
               value="online-payment"
-              checked={formData.paymentMethod === "online-payment"}
+              checked={formData?.paymentMethod === "online-payment"}
               onChange={handleInputChange}
             />
             <label htmlFor="online-payment">Online Payment</label>
