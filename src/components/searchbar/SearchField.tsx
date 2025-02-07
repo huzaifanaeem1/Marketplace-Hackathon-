@@ -45,19 +45,19 @@ const  SearchField = () => {
         const nameMatch = product.name
           .toLowerCase()
           .includes(query.toLowerCase());
-        const tagMatches = product.tags.filter((tag) =>
-          tag.toLowerCase().includes(query.toLowerCase())
-        );
+        // const tagMatches = product.tags.filter((tag) =>
+        //   tag.toLowerCase().includes(query.toLowerCase())
+        // );
 
         if (nameMatch) {
           acc.push({ type: "product", value: product.name });
         }
 
-        tagMatches.forEach((tag) => {
-          if (!acc.find((suggestion) => suggestion.value === tag)) {
-            acc.push({ type: "tag", value: tag });
-          }
-        });
+        // tagMatches.forEach((tag) => {
+        //   if (!acc.find((suggestion) => suggestion.value === tag)) {
+        //     acc.push({ type: "tag", value: tag });
+        //   }
+        // });
 
         return acc;
       },
