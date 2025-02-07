@@ -66,14 +66,16 @@ const Checkout = () => {
         <h2 className="text-3xl font-bold mb-6 text-gray-800">
           Contact Information
         </h2>
-        <InputField
-          label="Email"
-          type="email"
-          name="email"
-          value={formData.email || ""}
-          onChange={handleInputChange}
-          required
-        />
+
+<InputField
+  label="Email"
+  type="email"
+  name="email"
+  value={formData?.email || ""}
+  onChange={handleInputChange}
+  required
+/>
+
 
         {/* Delivery Section */}
         <h2 className="text-3xl font-bold mt-10 mb-6 text-gray-800">
@@ -85,7 +87,7 @@ const Checkout = () => {
               label="First Name"
               type="text"
               name="firstName"
-              value={formData.firstName}
+              value={formData?.firstName || ""}
               onChange={handleInputChange}
               required
             />
