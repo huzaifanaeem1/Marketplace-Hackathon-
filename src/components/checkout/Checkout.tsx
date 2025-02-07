@@ -91,13 +91,14 @@ const Checkout = () => {
               onChange={handleInputChange}
               required
             />
-            <InputField
-              label="Last Name"
-              type="text"
-              name="lastName"
-              value={formData.lastName || ""}
-              onChange={handleInputChange}
-            />
+          <InputField
+  label="Last Name"
+  type="text"
+  name="lastName"
+  value={formData?.lastName || ""}
+  onChange={handleInputChange}
+/>
+
           </div>
           <InputField
             label="Address"
