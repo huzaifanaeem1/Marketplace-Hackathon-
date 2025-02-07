@@ -12,7 +12,7 @@ import { ToastProvider } from "@/components/toast/ToastNotification";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shoeway",
+  title: "Stylezy",
   description: "E-commerce Marketplace",
   icons: {
     icon: "/favicon.ico",
